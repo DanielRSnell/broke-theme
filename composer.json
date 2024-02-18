@@ -1,0 +1,23 @@
+{
+  "name": "cearls/broketheme",
+  "type": "wordpress-theme",
+  "description": "A modern WordPress theme using Timber, ACF, Tailwind CSS and Alpine JS",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Daniel Snell",
+      "email": "cgearls@gmail.com"
+    }
+  ],
+  "require": {
+    "timber/timber": "^2.0"
+  },
+  "config": {
+    "optimize-autoloader": true,
+    "sort-packages": true,
+    "allow-plugins": {
+      "composer/installers": true
+    }
+  },
+  "minimum-stability": "stable"
+}

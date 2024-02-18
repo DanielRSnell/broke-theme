@@ -1,0 +1,31 @@
+{# if requesting a partial for ajax swaps it will not extend the base.twig #}
+{% if params.partial is not defined %}
+	{% extends 'preview.twig' %}
+{% endif %}
+
+{% set component = params.component %}
+{% set path = params.path|default('components') %}
+
+{# Optional if path and component differ #}
+
+{% block content %}
+
+	{{ include('@component/' ~ path ~ '/' ~ component ~ '/index.twig') }}
+
+	{% set state = params %}
+
+	{% if params.debug %}
+		{{ include('@helper/debug.twig') }}
+	{% endif %}
+
+	<style>
+		#wpadminbar {
+			display: none;
+		}
+
+		html {
+			margin-top: 0 !important;
+		}
+	</style>
+
+{% endblock %}

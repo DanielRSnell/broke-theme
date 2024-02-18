@@ -1,0 +1,12 @@
+{% set state = post.meta('components') %}
+
+{% if post.meta('debug') %}
+	{{ include('@helper/debug.twig') }}
+{% endif %}
+
+
+{% for layout in state %}
+
+	{{ include('@component/components/' ~ layout.acf_fc_layout ~ '/index.twig') }}
+
+{% endfor %}

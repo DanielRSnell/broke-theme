@@ -1,0 +1,29 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import-glob "../../blocks/**/*.css";
+@import "theme";
+@import "tailwindcss/utilities";
+
+body {
+  @apply font-sans;
+}
+
+.wp-block{
+  @apply max-w-screen-xl;
+}
+
+.wp-block-post-content {
+  @apply max-w-screen-xl mx-auto my-6;
+}
+
+.mce-content-body, .acf_content, .mceContentBody {
+  @apply prose prose-lg max-w-none;
+}
+
+h1.wp-block-post-title {
+  @apply text-4xl font-bold;
+}
+
+.acf-innerblocks-container {
+  @apply w-full;
+}

@@ -1,0 +1,48 @@
+{
+  "name": "broketheme",
+  "version": "1.1.0",
+  "description": "A modern WordPress theme using Timber, ACF, Tailwind CSS and Alpine JS",
+  "main": "index.js",
+  "scripts": {
+    "development": "mix",
+    "watch": "mix watch",
+    "watch-poll": "mix watch -- --watch-options-poll=1000",
+    "hot": "mix watch --hot",
+    "production": "mix --production"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "author": "Daniel Snell",
+  "license": "MIT",
+  "bugs": {
+    "url": ""
+  },
+  "homepage": "",
+  "dependencies": {
+    "@swup/forms-plugin": "^3.4.2",
+    "@swup/fragment-plugin": "^1.0.0",
+    "@swup/head-plugin": "^2.2.0",
+    "@swup/js-plugin": "^3.1.1",
+    "@swup/parallel-plugin": "^0.4.0",
+    "@swup/preload-plugin": "^3.2.10",
+    "@swup/progress-plugin": "^3.1.2",
+    "@tailwindcss/typography": "^0.5.9",
+    "alpinejs": "^3.12.2",
+    "autoprefixer": "^10.4.14",
+    "htmx.org": "^1.9.10",
+    "postcss": "^8.4.24",
+    "postcss-import": "^15.1.0",
+    "postcss-import-ext-glob": "^2.1.1",
+    "swup": "^4.6.0",
+    "tailwindcss": "^3.3.2"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.29.3",
+    "browser-sync-webpack-plugin": "^2.3.0",
+    "cross-env": "^7.0.3",
+    "laravel-mix": "^6.0.49",
+    "vue-template-compiler": "^2.7.14"
+  }
+}
