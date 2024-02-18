@@ -1,0 +1,174 @@
+
+    <section aria-labelledby="pricing-five" id="pricing-five">
+      <div x-data="{annual: false}" class="relative items-center w-full px-8 py-24 mx-auto md:px-12 lg:px-16 max-w-7xl">
+        <div class="max-w-xl mx-auto space-y-2 text-center lg:max-w-none">
+          <div class="relative z-0 inline-flex overflow-hidden bg-base-lightest border-2 border-primary-dark divide-x divide-primary-dark rounded-theme">
+            <button class="block w-full px-8 py-2 text-sm font-medium text-base-lightest transition rounded-l-full" :class="annual == false ? 'bg-primary-dark text-base-lightest ' : 'text-visit-900'" @click="annual = false" type="button">
+              Monthly
+            </button>
+            <button class="block w-full px-8 py-2 text-sm font-medium transition rounded-r-full" :class="annual == true ? 'bg-primary-dark text-base-lightest' : 'text-visit-900'" @click="annual = true" type="button">
+              Annual
+            </button>
+          </div>
+        </div>
+        <div class="my-12 space-y-4 sm:mt-16 sm:space-y-0 sm:grid sm:grid-cols-2 sm:gap-6 lg:max-w-4xl lg:mx-auto xl:max-w-none xl:grid-cols-2">
+          <div>
+            <div class="grid items-center justify-center w-full grid-cols-1 p-6 bg-base-100 rounded-t-3xl lg:p-8 lg:grid-cols-2">
+              <div>
+                <h2 class="text-lg text-primary-dark">Basic plan</h2>
+                <p class="mt-4 text-sm text-base-500">
+                  Suitable for those that want to grow steadily.
+                </p>
+              </div>
+              <div class="flex-col mt-3 lg:mt-0 lg:text-right lg:ml-auto">
+                <p class="text-5xl font-light tracking-tight text-primary-dark">
+                  $
+                  <span x-text="annual ? '8.00' : '15.00'"> 15.00 </span>
+                </p>
+                <p class="text-sm text-base-500">
+                  per month
+                  <span x-show="annual" style="display: none">
+                    (billed annually)
+                  </span>
+                </p>
+              </div>
+            </div>
+            <div class="px-6 pb-8 bg-base-100 border-t rounded-b-3xl">
+              <div class="grid grid-cols-1 lg:grid-cols-2 lg:gap-12">
+                <ul role="list" class="flex flex-col order-last mt-10 text-sm text-base-500 gap-y-3">
+                  <li class="flex items-center">
+                    <ion-icon class="w-4 h-4" name="checkmark-outline"></ion-icon>
+                    <span class="ml-4"> Connect unlimited websites </span>
+                  </li>
+                  <li class="flex items-center">
+                    <ion-icon class="w-4 h-4" name="checkmark-outline"></ion-icon>
+                    <span class="ml-4"> 15 bank accounts </span>
+                  </li>
+                  <li class="flex items-center">
+                    <ion-icon class="w-4 h-4" name="checkmark-outline"></ion-icon>
+                    <span class="ml-4"> Track 200 credit cards </span>
+                  </li>
+                  <li class="flex items-center">
+                    <ion-icon class="w-4 h-4" name="checkmark-outline"></ion-icon>
+                    <span class="ml-4"> Analytics support </span>
+                  </li>
+                  <li class="flex items-center">
+                    <ion-icon class="w-4 h-4" name="checkmark-outline"></ion-icon>
+                    <span class="ml-4"> Export 24 months data </span>
+                  </li>
+                </ul>
+                <ul role="list" class="flex flex-col order-last mt-3 text-sm text-base-500 lg:mt-10 gap-y-3">
+                  <li class="flex items-center">
+                    <ion-icon class="w-4 h-4" name="checkmark-outline"></ion-icon>
+                    <span class="ml-4"> Connect unlimited websites </span>
+                  </li>
+                  <li class="flex items-center">
+                    <ion-icon class="w-4 h-4" name="checkmark-outline"></ion-icon>
+                    <span class="ml-4"> 15 bank accounts </span>
+                  </li>
+                  <li class="flex items-center">
+                    <ion-icon class="w-4 h-4" name="checkmark-outline"></ion-icon>
+                    <span class="ml-4"> Track 200 credit cards </span>
+                  </li>
+                  <li class="flex items-center">
+                    <ion-icon class="w-4 h-4" name="checkmark-outline"></ion-icon>
+                    <span class="ml-4"> Analytics support </span>
+                  </li>
+                  <li class="flex items-center">
+                    <ion-icon class="w-4 h-4" name="checkmark-outline"></ion-icon>
+                    <span class="ml-4"> Export 24 months data </span>
+                  </li>
+                </ul>
+              </div>
+              <div class="flex">
+                <a class="items-center justify-center w-full px-6 py-2.5 mt-8 text-center text-base-lightest duration-200 bg-primary-dark border-2 border-primary-dark rounded-theme nline-flex hover:bg-transparent hover:border-primary-dark hover:text-primary-dark focus:outline-none focus-visible:outline-primary-dark text-sm focus-visible:ring-primary-dark" aria-label="Big fish tier" href="#">
+                  Button
+                </a>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="grid items-center justify-center w-full grid-cols-1 p-6 bg-primary-dark rounded-t-3xl lg:p-8 lg:grid-cols-2">
+              <div>
+                <h2 class="text-lg text-base-lightest">
+                  Advanced plan
+                  <span class="inline-flex items-center ml-3 px-2.5 py-0.5 rounded-xl text-xs font-medium bg-base-lightest/5 text-base-lightest">
+                    Popular
+                  </span>
+                </h2>
+                <p class="mt-4 text-sm text-base-100">
+                  Suitable for those that want to grow like a rocket.
+                </p>
+              </div>
+              <div class="flex-col mt-3 lg:mt-0 lg:text-right lg:ml-auto">
+                <p class="text-5xl font-light tracking-tight text-base-lightest">
+                  $
+                  <span x-text="annual ? '28.00' : '35.00'"> 35.00 </span>
+                </p>
+                <p class="text-sm text-base-100">
+                  per month
+                  <span x-show="annual" style="display: none">
+                    (billed annually)
+                  </span>
+                </p>
+              </div>
+            </div>
+            <div class="px-6 pb-8 bg-primary-dark border-t rounded-b-3xl border-base-lightest/10">
+              <div class="grid grid-cols-1 lg:grid-cols-2 lg:gap-12">
+                <ul role="list" class="flex flex-col order-last mt-10 text-sm text-base-lightest gap-y-3">
+                  <li class="flex items-center">
+                    <ion-icon class="w-4 h-4" name="checkmark-outline"></ion-icon>
+                    <span class="ml-4"> Connect unlimited websites </span>
+                  </li>
+                  <li class="flex items-center">
+                    <ion-icon class="w-4 h-4" name="checkmark-outline"></ion-icon>
+                    <span class="ml-4"> 15 bank accounts </span>
+                  </li>
+                  <li class="flex items-center">
+                    <ion-icon class="w-4 h-4" name="checkmark-outline"></ion-icon>
+                    <span class="ml-4"> Track 200 credit cards </span>
+                  </li>
+                  <li class="flex items-center">
+                    <ion-icon class="w-4 h-4" name="checkmark-outline"></ion-icon>
+                    <span class="ml-4"> Analytics support </span>
+                  </li>
+                  <li class="flex items-center">
+                    <ion-icon class="w-4 h-4" name="checkmark-outline"></ion-icon>
+                    <span class="ml-4"> Export 24 months data </span>
+                  </li>
+                </ul>
+                <ul role="list" class="flex flex-col order-last mt-3 text-sm text-base-lightest lg:mt-10 gap-y-3">
+                  <li class="flex items-center">
+                    <ion-icon class="w-4 h-4" name="checkmark-outline"></ion-icon>
+                    <span class="ml-4"> Connect unlimited websites </span>
+                  </li>
+                  <li class="flex items-center">
+                    <ion-icon class="w-4 h-4" name="checkmark-outline"></ion-icon>
+                    <span class="ml-4"> 15 bank accounts </span>
+                  </li>
+                  <li class="flex items-center">
+                    <ion-icon class="w-4 h-4" name="checkmark-outline"></ion-icon>
+                    <span class="ml-4"> Track 200 credit cards </span>
+                  </li>
+                  <li class="flex items-center">
+                    <ion-icon class="w-4 h-4" name="checkmark-outline"></ion-icon>
+                    <span class="ml-4"> Analytics support </span>
+                  </li>
+                  <li class="flex items-center">
+                    <ion-icon class="w-4 h-4" name="checkmark-outline"></ion-icon>
+                    <span class="ml-4"> Export 24 months data </span>
+                  </li>
+                </ul>
+              </div>
+              <div class="flex">
+                <a class="items-center justify-center w-full px-6 py-2.5 mt-8 text-center text-primary-dark duration-200 bg-base-lightest border-2 border-base-lightest rounded-theme nline-flex hover:bg-transparent hover:border-base-lightest hover:text-base-lightest focus:outline-none focus-visible:outline-base-lightest text-sm focus-visible:ring-base-lightest" aria-label="Indie hacker tier" href="#">
+                  Button
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  
+

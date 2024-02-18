@@ -1,0 +1,86 @@
+
+    <section>
+      <div class="items-center px-8 mx-auto max-w-7xl lg:px-16 md:px-12">
+        <div class="justify-center w-full lg:p-10 max-auto">
+          <div x-data="{ tab: 'tab1' }">
+            <ul class="flex justify-between mx-auto overflow-hidden text-sm text-center text-primary-dark border divide-x rounded-xl">
+              <li class="w-full">
+                <!-- event handler set state to 'tab1' and add conditional :class for active state -->
+                <a @click.prevent="tab = 'tab1'" href="#" class="inline-block w-full px-6 py-2 font-medium text-visit-500 bg-base-lightest border-b-2 border-transparent border-visit-500" :class="{ ' bg-base-lightest text-visit-500  border-visit-500' : tab === 'tab1' }">
+                  Buttons
+                </a>
+              </li>
+              <li class="w-full">
+                <a @click.prevent="tab = 'tab2'" href="#" class="inline-block w-full px-6 py-2 font-medium text-visit-500 bg-base-lightest border-b-2 border-transparent border-visit-500" :class="{ ' bg-base-lightest text-visit-500  border-visit-500' : tab === 'tab2' }">
+                  Forms
+                </a>
+              </li>
+              <li class="w-full">
+                <a @click.prevent="tab = 'tab3'" href="#" class="inline-block w-full px-6 py-2 font-medium text-visit-500 bg-base-lightest border-b-2 border-transparent border-visit-500" :class="{ ' bg-base-lightest text-visit-500  border-visit-500' : tab === 'tab3' }">
+                  Inputs
+                </a>
+              </li>
+            </ul>
+            <div class="py-4 pt-4 text-left bg-base-lightest content">
+              <!-- show tab1 only -->
+              <div x-show="tab==='tab1'" class="text-base-500">
+                <main>
+                  <!-- === Remove and replace with your own content... === -->
+                  <div class="py-4">
+                    <span class="inline-flex items-center text-primary-dark">
+                      <span class="font-mono text-sm" aria-hidden="true">
+                        01
+                      </span>
+                      <span class="ml-3 h-3.5 w-px bg-primary-dark"></span>
+                      <span class="ml-3 text-base font-medium tracking-tight">
+                        Tab content
+                      </span>
+                    </span>
+                    <div class="h-32 border border-base-200 border-dashed rounded-lg"></div>
+                  </div>
+                  <!-- === End ===  -->
+                </main>
+              </div>
+              <div x-show="tab==='tab2'" class="text-base-500" style="display: none">
+                <main>
+                  <!-- === Remove and replace with your own content... === -->
+                  <div class="py-4">
+                    <span class="inline-flex items-center text-primary-dark">
+                      <span class="font-mono text-sm" aria-hidden="true">
+                        02
+                      </span>
+                      <span class="ml-3 h-3.5 w-px bg-primary-dark"></span>
+                      <span class="ml-3 text-base font-medium tracking-tight">
+                        Tab content
+                      </span>
+                    </span>
+                    <div class="h-32 border border-base-200 border-dashed rounded-lg"></div>
+                  </div>
+                  <!-- === End ===  -->
+                </main>
+              </div>
+              <div x-show="tab==='tab3'" class="text-base-500" style="display: none">
+                <main>
+                  <!-- === Remove and replace with your own content... === -->
+                  <div class="py-4">
+                    <span class="inline-flex items-center text-primary-dark">
+                      <span class="font-mono text-sm" aria-hidden="true">
+                        03
+                      </span>
+                      <span class="ml-3 h-3.5 w-px bg-primary-dark"></span>
+                      <span class="ml-3 text-base font-medium tracking-tight">
+                        Tab content
+                      </span>
+                    </span>
+                    <div class="h-32 border border-base-200 border-dashed rounded-lg"></div>
+                  </div>
+                  <!-- === End ===  -->
+                </main>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  
+

@@ -1,0 +1,336 @@
+<div class="w-full mx-auto bg-base-lightest border-b 2xl:max-w-7xl">
+  <div
+    x-data="{ open: false }"
+    class="relative flex flex-col w-full p-5 mx-auto bg-base-lightest md:items-center md:justify-between md:flex-row md:px-6 lg:px-8"
+  >
+    <div class="flex flex-row items-center justify-between lg:justify-start">
+      <a
+        class="text-lg tracking-tight text-primary-dark uppercase focus:outline-none focus:ring lg:text-2xl"
+        href="#"
+      >
+        <span class="lg:text-lg uppecase focus:ring-0"> Broke.dev </span>
+      </a>
+      <button
+        @click="open = !open"
+        class="inline-flex items-center justify-center p-2 text-base-400 hover:text-primary-dark focus:outline-none focus:text-primary-dark md:hidden"
+      >
+        <svg
+          class="w-6 h-6"
+          stroke="currentColor"
+          fill="none"
+          viewBox="0 0 24 24"
+        >
+          <path
+            :class="{'hidden': open, 'inline-flex': !open }"
+            class="inline-flex"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16"
+          ></path>
+          <path
+            :class="{'hidden': !open, 'inline-flex': open }"
+            class="hidden"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M6 18L18 6M6 6l12 12"
+          ></path>
+        </svg>
+      </button>
+    </div>
+    <nav
+      :class="{'flex': open, 'hidden': !open}"
+      class="flex-col items-center flex-grow hidden md:pb-0 md:flex md:justify-end md:flex-row"
+    >
+      <a
+        class="px-2 py-2 text-sm text-base-500 lg:px-6 md:px-3 hover:text-visit-600"
+        href="#"
+      >
+        About
+      </a>
+      <a
+        class="px-2 py-2 text-sm text-base-500 lg:px-6 md:px-3 hover:text-visit-600"
+        href="#"
+      >
+        Contact
+      </a>
+      <div
+        class="order-last md:order-none"
+        x-data="{ openMobileMenu: false }"
+        x-on:click.away="openMobileMenu = false"
+        x-cloak=""
+      >
+        <div class="relative">
+          <nav class="relative flex items-center justify-around w-full sm:h-10">
+            <div class="flex items-center justify-between flex-1">
+              <div
+                class="flex items-center -mr-2"
+                x-on:click="openMobileMenu = !openMobileMenu"
+              >
+                <button
+                  type="button"
+                  class="flex flex-row items-center w-full px-4 py-2 mt-2 text-sm text-left text-base-500 md:w-auto md:inline md:mt-0 hover:text-visit-600 focus:outline-none focus:shadow-outline"
+                  id="main-menu"
+                  aria-label="Main menu"
+                  aria-haspopup="true"
+                >
+                  <span> Flyout menu </span>
+                  <svg
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                    :class="{'rotate-180': open, 'rotate-0': !open}"
+                    class="inline w-4 h-4 mt-1 ml-1 transition-transform duration-200 transform rotate-0 md:-mt-1"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                      clip-rule="evenodd"
+                    ></path>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </nav>
+        </div>
+        <div
+          x-on:click="openMobileMenu = false"
+          x-transition:enter="transition ease-out duration-150"
+          x-transition:enter-start="opacity-0 transform scale-95"
+          x-transition:enter-end="opacity-100 transform scale-100"
+          x-transition:leave="transition ease-in duration-100"
+          x-transition:leave-start="opacity-100 transform scale-100"
+          x-transition:leave-end="opacity-0 transform scale-95"
+          :class="{'translate-y-0 shadow-md duration-150': openMobileMenu, '-translate-y-full': ! openMobileMenu}"
+          class="fixed inset-0 top-0 z-40 h-screen overflow-y-auto transition origin-top transform"
+        >
+          <div
+            class="relative overflow-hidden bg-base-lightest shadow-xl lg:bg-transparent"
+            role="menu"
+            aria-orientation="vertical"
+            aria-labelledby="main-menu"
+          >
+            <div class="bg-base-lightest border-y">
+              <div
+                class="grid px-4 py-6 mx-auto sm:grid-cols-2 2xl:max-w-7xl gap-y-6 sm:gap-8 sm:px-6 sm:py-8 lg:grid-cols-3 lg:px-8 lg:py-12 xl:py-16"
+              >
+                <div class="grid grid-cols-1 gap-3 p-2 lg:p-0">
+                  <a
+                    href="#"
+                    class="flex flex-col justify-between p-6 -m-3 transition duration-500 ease-in-out transform bg-transparent hover:bg-base-50"
+                  >
+                    <div class="relative">
+                      <div>
+                        <div
+                          class="absolute flex items-center justify-center w-12 h-12 text-visit-500 rounded-xl bg-base-50"
+                        >
+                          <ion-icon
+                            class="w-6 h-6"
+                            name="document-outline"
+                          ></ion-icon>
+                        </div>
+                        <p
+                          class="mt-4 ml-16 text-base font-medium text-primary-dark"
+                        >
+                          Database with GraphQL
+                        </p>
+                      </div>
+                      <div class="mt-2 ml-16 text-sm text-base-500">
+                        Define the data model in your database
+                      </div>
+                    </div>
+                  </a>
+                  <a
+                    href="#"
+                    class="flex flex-col justify-between p-6 -m-3 transition duration-500 ease-in-out transform bg-transparent hover:bg-base-50"
+                  >
+                    <div class="relative">
+                      <div>
+                        <div
+                          class="absolute flex items-center justify-center w-12 h-12 text-visit-500 rounded-xl bg-base-50"
+                        >
+                          <ion-icon
+                            class="w-6 h-6"
+                            name="sync-outline"
+                          ></ion-icon>
+                        </div>
+                        <p
+                          class="mt-4 ml-16 text-base font-medium text-primary-dark"
+                        >
+                          Real-time Sync
+                        </p>
+                      </div>
+                      <div class="mt-2 ml-16 text-sm text-base-500">
+                        Sync data across multiple clients.
+                      </div>
+                    </div>
+                  </a>
+                  <a
+                    href="#"
+                    class="flex flex-col justify-between p-6 -m-3 transition duration-500 ease-in-out transform bg-transparent hover:bg-base-50"
+                  >
+                    <div class="relative">
+                      <div>
+                        <div
+                          class="absolute flex items-center justify-center w-12 h-12 text-visit-500 rounded-xl bg-base-50"
+                        >
+                          <ion-icon
+                            class="w-6 h-6"
+                            name="home-outline"
+                          ></ion-icon>
+                        </div>
+                        <p
+                          class="mt-4 ml-16 text-base font-medium text-primary-dark"
+                        >
+                          File Storage
+                        </p>
+                      </div>
+                      <div class="mt-2 ml-16 text-sm text-base-500">
+                        Upload and manage files.
+                      </div>
+                    </div>
+                  </a>
+                </div>
+                <div class="grid grid-cols-1 gap-6 p-2 lg:p-0">
+                  <a
+                    href="#"
+                    class="flex flex-col justify-between p-6 -m-3 transition duration-500 ease-in-out transform bg-transparent hover:bg-base-50"
+                  >
+                    <div class="relative">
+                      <div>
+                        <div
+                          class="absolute flex items-center justify-center w-12 h-12 text-visit-500 rounded-xl bg-base-50"
+                        >
+                          <ion-icon
+                            class="w-6 h-6"
+                            name="image-outline"
+                          ></ion-icon>
+                        </div>
+                        <p
+                          class="mt-4 ml-16 text-base font-medium text-primary-dark"
+                        >
+                          Image Transformations
+                        </p>
+                      </div>
+                      <div class="mt-2 ml-16 text-sm text-base-500">
+                        Resize and optimise images on the fly.
+                      </div>
+                    </div>
+                  </a>
+                  <a
+                    href="#"
+                    class="flex flex-col justify-between p-6 -m-3 transition duration-500 ease-in-out transform bg-transparent hover:bg-base-50"
+                  >
+                    <div class="relative">
+                      <div>
+                        <div
+                          class="absolute flex items-center justify-center w-12 h-12 text-visit-500 rounded-xl bg-base-50"
+                        >
+                          <ion-icon
+                            class="w-6 h-6"
+                            name="key-outline"
+                          ></ion-icon>
+                        </div>
+                        <p
+                          class="mt-4 ml-16 text-base font-medium text-primary-dark"
+                        >
+                          Authentication
+                        </p>
+                      </div>
+                      <div class="mt-2 ml-16 text-sm text-base-500">
+                        User accounts and social login.
+                      </div>
+                    </div>
+                  </a>
+                  <a
+                    href="#"
+                    class="flex flex-col justify-between p-6 -m-3 transition duration-500 ease-in-out transform bg-transparent hover:bg-base-50"
+                  >
+                    <div class="relative">
+                      <div>
+                        <div
+                          class="absolute flex items-center justify-center w-12 h-12 text-visit-500 rounded-xl bg-base-50"
+                        >
+                          <ion-icon
+                            class="w-6 h-6"
+                            name="ellipse-outline"
+                          ></ion-icon>
+                        </div>
+                        <p
+                          class="mt-4 ml-16 text-base font-medium text-primary-dark"
+                        >
+                          Serverless Functions
+                        </p>
+                      </div>
+                      <div class="mt-2 ml-16 text-sm text-base-500">
+                        Custom backend code with logs and error.
+                      </div>
+                    </div>
+                  </a>
+                </div>
+                <div class="grid grid-cols-2 gap-6 p-2 lg:grid-cols-1">
+                  <div
+                    class="p-3 duration-200 rounded-xl sm:flex lg:items-start group hover:bg-base-100"
+                  >
+                    <div class="flex-shrink-0 mb-4 sm:mb-0 sm:mr-4">
+                      <img
+                        class="w-16 h-16 bg-base-100 lg:h-32 lg:w-32 rounded-xl"
+                        src="/wp-content/uploads/broke/placeholders/square1.svg"
+                        alt="text"
+                      />
+                    </div>
+                    <div>
+                      <a href="#">
+                        <p class="mt-3 text-lg font-medium leading-6 lg:mt-0">
+                          Functions a la carte.
+                        </p>
+                        <p class="mt-4 text-sm text-base-500">
+                          The Serverless Framework helps you develop and deploy
+                          AWS Lambda functions.
+                        </p>
+                      </a>
+                    </div>
+                  </div>
+                  <div
+                    class="p-3 duration-200 rounded-xl sm:flex lg:items-start group hover:bg-base-100"
+                  >
+                    <div class="flex-shrink-0 mb-4 sm:mb-0 sm:mr-4">
+                      <img
+                        class="w-16 h-16 bg-base-100 lg:h-32 lg:w-32 rounded-xl"
+                        src="/wp-content/uploads/broke/placeholders/square2.svg"
+                        alt="text"
+                      />
+                    </div>
+                    <div>
+                      <a href="#">
+                        <p class="mt-3 text-lg font-medium leading-6 lg:mt-0">
+                          Starting with payments
+                        </p>
+                        <p class="mt-4 text-sm text-base-500">
+                          One subscription, which includes all features, and
+                          offers three tiers for different levels of usage.
+                        </p>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="inline-flex items-center gap-2 list-none lg:ml-auto">
+        <button
+          class="block px-4 py-2 mt-2 text-sm text-base-500 md:mt-0 hover:text-visit-600 focus:outline-none focus:shadow-outline"
+        >
+          Sign in
+        </button>
+        <button
+          class="inline-flex items-center justify-center px-4 py-2 text-sm font-semibold text-base-lightest bg-primary-dark rounded-theme group focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 hover:bg-base-700 active:bg-base-800 active:text-base-lightest focus-visible:outline-primary-dark"
+        >
+          Sign up
+        </button>
+      </div>
+    </nav>
+  </div>
+</div>
