@@ -7,7 +7,7 @@
  * @array   $field       Flexible content field settings
  * @bool    $is_preview  True in Administration
  */
- 
+
 global $post;
 
 $context = [];
@@ -37,7 +37,7 @@ if (isset($all_fields[$group]) && !empty($all_fields[$group])) {
 
 // If no matching layout is found, you might want to handle that case here (e.g., setting a default value or handling an error)
 
-// Get ACF Fields 
+// Get ACF Fields
 // $context['post'] = Timber::get_post($post->ID); // Fetch the current post
 $context['group'] = $group; // Assuming $group is defined earlier
 $context['name'] = $name; // Assuming $name is defined earlier
@@ -52,12 +52,8 @@ $context['state'] = $context; // This line might need revision based on your int
 // Check if 'debug' field is not false
 if ($context['debug']) {
     // 'debug' field is true or has a value, render the Twig template
-    Timber::render('@helper/prism.twig', $context);
+    Timber::render('@helper/prism.html', $context);
 } else {
     // 'debug' field is false, echo the message
     Timber::render('@component/dynamic-render.twig', $context);
 }
-
-
-
-?>

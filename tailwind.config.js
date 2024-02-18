@@ -1,10 +1,6 @@
 module.exports = {
   content: [
-    './theme/views/**/*.twig',
-    './theme/layouts/**/*.twig',
-    './theme/helpers/**/*.twig',
-    './theme/blocks/**/*.twig',
-    './theme/views/components/**/*.twig',
+    './theme/**/*.{twig,html}',
   ],
   theme: {
     extend: {},

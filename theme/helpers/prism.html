@@ -1,0 +1,31 @@
+<!-- Include HighlightJS Stylesheet -->
+<!-- Include Prism.js CSS for the Okaidia theme -->
+<link
+  href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism-okaidia.min.css"
+  rel="stylesheet"
+/>
+<!-- Include Prism.js core library -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.min.js"></script>
+
+<!-- Optionally, include additional languages -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-json.min.js"></script>
+
+{# {% set state = CompletePost(CurrentPost) %} #}
+
+<pre
+  x-show="mode === 'state'"
+  x-bind:class="{ 'max-h-[35vh]': size === 'sm', 'max-h-[50vh]': size === 'md', 'max-h-[75vh]': size === 'lg', 'max-h-[90vh]': size === 'full' }"
+  x-effect="Prism.highlightAll(); console.log('change occured')"
+> 
+<code class="language-json">{{ function('json_encode', state, constant('JSON_PRETTY_PRINT')) | escape('html') }}</code>
+    </pre>
+
+<pre
+  x-show="mode === 'components'"
+  x-bind:class="{ 'max-h-[35vh]': size === 'sm', 'max-h-[50vh]': size === 'md', 'max-h-[75vh]': size === 'lg', 'max-h-[90vh]': size === 'full' }"
+  x-effect="Prism.highlightAll(); console.log('change occured')"
+> 
+  <code class="language-json">
+  {{ function('json_encode', components, constant('JSON_PRETTY_PRINT')) | escape('html') }}
+  </code>
+</pre>

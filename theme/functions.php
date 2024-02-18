@@ -8,7 +8,7 @@
 require_once dirname(__DIR__) . '/vendor/autoload.php';
 
 Timber\Timber::init();
-Timber::$dirname = [ 'views', 'blocks' ];
+Timber::$dirname = ['views', 'blocks'];
 Timber::$autoescape = false;
 
 require get_stylesheet_directory() . '/timber/controller.php';
@@ -58,7 +58,7 @@ class broketheme extends Timber\Site
                 'comment-form',
                 'comment-list',
                 'gallery',
-                'caption'
+                'caption',
             ]
         );
         add_theme_support('menus');
@@ -70,6 +70,7 @@ class broketheme extends Timber\Site
 
     public function enqueue_scripts()
     {
+        // Dequeue WordPress styles and jQuery script
         wp_dequeue_style('wp-block-library');
         wp_dequeue_style('wp-block-library-theme');
         wp_dequeue_style('wc-block-style');
@@ -77,8 +78,31 @@ class broketheme extends Timber\Site
 
         $mixPublicPath = get_template_directory() . '/assets/build';
 
+        // Enqueue your theme's stylesheet
         wp_enqueue_style('style', get_template_directory_uri() . '/assets/build' . $this->mix("/app.css", $mixPublicPath));
+
+        // Enqueue your theme's main JavaScript file
         wp_enqueue_script('app', get_template_directory_uri() . '/assets/build' . $this->mix("/app.js", $mixPublicPath), array(), '', true);
+
+        // Add filter to add 'defer' attribute to 'app' script tag
+        add_filter('script_loader_tag', array($this, 'add_defer_attribute'), 10, 3);
+    }
+
+    /**
+     * Adds 'defer' attribute to specific scripts.
+     *
+     * @param string $tag The `<script>` tag for the enqueued script.
+     * @param string $handle The script's registered handle.
+     * @param string $src The script's source URL.
+     * @return string Modified script HTML string.
+     */
+    public function add_defer_attribute($tag, $handle, $src)
+    {
+        // Add defer attribute to the 'app' script
+        if ($handle === 'app') {
+            $tag = '<script src="' . esc_url($src) . '" defer></script>';
+        }
+        return $tag;
     }
 
     public function block_categories_all($categories)
@@ -91,7 +115,9 @@ class broketheme extends Timber\Site
         $blocks = [];
 
         foreach (new DirectoryIterator(dirname(__FILE__) . '/blocks') as $dir) {
-            if ($dir->isDot()) continue;
+            if ($dir->isDot()) {
+                continue;
+            }
 
             if (file_exists($dir->getPathname() . '/block.json')) {
                 $blocks[] = $dir->getPathname();
@@ -108,7 +134,7 @@ class broketheme extends Timber\Site
     public function allowed_block_types()
     {
         $allowed_blocks = [
-            'core/columns'
+            'core/columns',
         ];
 
         foreach (new DirectoryIterator(dirname(__FILE__) . '/blocks') as $dir) {
@@ -151,7 +177,8 @@ class broketheme extends Timber\Site
 
 new broketheme();
 
-function acf_block_render_callback($block, $content) {
+function acf_block_render_callback($block, $content)
+{
     $context = Timber::context();
     $context['post'] = Timber::get_post();
     $context['block'] = $block;
@@ -162,7 +189,8 @@ function acf_block_render_callback($block, $content) {
 }
 
 // Remove ACF block wrapper div
-function acf_should_wrap_innerblocks($wrap, $name) {
+function acf_should_wrap_innerblocks($wrap, $name)
+{
     // if ( $name == 'acf/test-block' ) {
     //     return true;
     // }
@@ -180,7 +208,8 @@ $disabled_editor_post_types = ['page']; // Separate array for complete disabling
 // Hook into the 'use_block_editor_for_post_type' filter to disable the block editor for specific post types.
 add_filter('use_block_editor_for_post_type', 'disable_block_editor_for_specific_post_types', 10, 2);
 
-function disable_block_editor_for_specific_post_types($use_block_editor, $post_type) {
+function disable_block_editor_for_specific_post_types($use_block_editor, $post_type)
+{
     global $disabled_block_editor_post_types;
 
     return in_array($post_type, $disabled_block_editor_post_types) ? false : $use_block_editor;
@@ -189,7 +218,8 @@ function disable_block_editor_for_specific_post_types($use_block_editor, $post_t
 // Remove unwanted meta boxes for specified post types in the admin.
 add_action('admin_init', 'remove_unwanted_meta_boxes');
 
-function remove_unwanted_meta_boxes() {
+function remove_unwanted_meta_boxes()
+{
     global $disabled_block_editor_post_types, $pagenow;
 
     // Check if we're on the post edit screen and the current post type is in our list.
@@ -208,7 +238,8 @@ function remove_unwanted_meta_boxes() {
 // Hook into the 'init' action to remove editor support from specified post types.
 add_action('init', 'remove_editor_from_specific_post_types');
 
-function remove_editor_from_specific_post_types() {
+function remove_editor_from_specific_post_types()
+{
     global $disabled_editor_post_types;
 
     foreach ($disabled_editor_post_types as $post_type) {
