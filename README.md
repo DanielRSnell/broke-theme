@@ -1,16 +1,58 @@
 # Broke Theme :evergreen_tree:
 
-Broke Theme is an opinionated WordPress theme using [Timber](https://www.upstatement.com/timber/), [Advanced Custom Fields Pro](https://www.advancedcustomfields.com/), [Laravel Mix](https://github.com/JeffreyWay/laravel-mix), [Tailwind](https://tailwindcss.com/), [SWUP](https://swup.js.org/), and [Alpine.js](https://github.com/alpinejs/alpine).
+Broke Theme is a sophisticated WordPress theme that leverages a suite of powerful tools including [Timber](https://www.upstatement.com/timber/), [Advanced Custom Fields Pro](https://www.advancedcustomfields.com/), [Laravel Mix](https://github.com/JeffreyWay/laravel-mix), [Tailwind CSS](https://tailwindcss.com/), [SWUP](https://swup.js.org/), and [Alpine.js](https://github.com/alpinejs/alpine) to create high-performance websites with editor-friendly interfaces.
 
-As of version 1.0, Broke Theme now uses the WordPress block editor to visually edit the site. This is made possible by the [ACF Blocks feature](https://www.advancedcustomfields.com/resources/blocks/).
+## Our Mission
 
-## Installation
+Our goal with Broke is to facilitate the development of high-performance websites that not only deliver on the front-end but also provide a seamless back-end experience for editors. To this end, we've crafted two distinct development paths:
 
-1. Download the zip for this theme (or clone it) and move it to `wp-content/themes` in your WordPress installation.
-2. Run `composer install` in the theme directory.
-3. Run `npm install` in the theme directory.
-4. Activate the theme in Appearance > Themes.
-5. Make sure you have installed [Advanced Custom Fields Pro](https://www.advancedcustomfields.com/)
+### ACF Flexible Content + Dynamic Rendering
+
+This approach empowers clients with a customizable page builder to edit, manage, and create pages effortlessly. It's designed to offer a seamless and controlled editing experience, making it our recommended choice for most clients.
+
+Benefits include:
+
+- Streamlined interface for non-technical users.
+- High degree of customization without the complexities of Gutenberg.
+
+### Block Editor Integration
+
+For those who prefer Gutenberg, Broke allows for the creation of custom blocks via all components, enhancing the block editor's usability and friendliness.
+
+This option is best suited for:
+
+- Creating content blocks for use during the post creation process.
+- Enabling a fast, user-friendly Gutenberg experience without relying on it for full-scale page building.
+
+We advocate for using the block editor primarily for posts and long-form content, ensuring consistency across editing experiences. This harmonization is crucial as Gutenberg, even with Full Site Editing (FSE), maintains a distinct layout that might not align with every theme's design philosophy.
+
+This dual approach is made viable through [ACF's Blocks feature](https://www.advancedcustomfields.com/resources/blocks/), blending flexibility with functionality.
+
+## Installation Instructions
+
+To set up the Broke Theme on your WordPress site, follow these steps:
+
+1. **Download and Install Theme:**
+
+   - Either download the theme's ZIP file or clone this repository.
+   - Move the downloaded or cloned theme into the `wp-content/themes` directory of your WordPress installation.
+
+2. **Install Dependencies:**
+
+   - Navigate to the theme's directory in your terminal.
+   - Execute `composer install` to install PHP dependencies.
+   - Run `npm install` to install Node.js dependencies.
+
+3. **Activate Theme:**
+
+   - Go to your WordPress dashboard, navigate to Appearance > Themes.
+   - Locate Broke Theme and click "Activate".
+
+4. **Plugin Recommendations:**
+   - Upon theme activation, you will receive installation prompts for ACF Pro and ACF Extended through TGM Plugin Activation (TGPM) if they are not already installed.
+   - If you have ACF Extended Pro installed, you can safely dismiss the ACF Extended recommendation.
+
+These steps will ensure the Broke Theme is properly installed along with its required plugins and dependencies, ready for your customization and content.
 
 ## Development
 
@@ -37,6 +79,32 @@ If you're developing locally and moving files to your production environment, on
   ├── theme/
   ├── vendor/
 ```
+
+## Dynamic Layouts and Live Previews
+
+Dynamic layouts enhance the WordPress admin experience by offering live previews within Flexible Content fields, streamlining the editing process. For this functionality, ACF Extended is essential as it enables the live previews.
+
+### Adding New Layouts
+
+To introduce new layouts, utilize the `layouts` directory. Refer to the `/theme/layouts/components` directory for examples on structuring your Flexible Content layouts.
+
+Here's a sample directory structure for a new component:
+
+```
+layouts/
+├─ components/
+│   ├─ hero/
+│   │   ├── index.twig
+│   │   ├── _scripts.js
+│   │   └── _styles.css
+
+```
+
+### Optional Scripts and Styles
+
+The theme primarily uses Tailwind CSS for styling. However, you can add component-specific CSS or JavaScript files as needed. These should be placed directly in the component's directory. Additionally, for an enhanced development workflow, consider using the Broke CLI (upon its release) to manage these component-specific assets.
+
+This approach ensures a modular and flexible development environment, facilitating component reuse and ease of maintenance.
 
 ## Blocks
 
@@ -74,6 +142,8 @@ Here's an example of how to loop through a repeater field where "features" is th
 `theme/acf-json/` contain all of your Advanced Custom Fields json files. These files are automatically created/updated using ACF's Local JSON feature.
 
 `theme/assets/` contain all of your fonts, images, styles and scripts.
+
+`theme/layouts/` contains all of your site's layout components used within the Flexible Content fields or as part of dynamic page templates. Each layout component has its own directory, which can include a Twig template file, optional JavaScript, and CSS files specific to that layout. These components allow for modular page construction and can be reused across different pages or posts, providing a versatile way to manage and present content dynamically.
 
 `theme/blocks/` contain all of your site's blocks. These blocks are available to use on any page via the block editor. Each block has its own template, script and style files.
 
