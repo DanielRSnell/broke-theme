@@ -13,6 +13,7 @@ Timber::$autoescape = false;
 
 require get_stylesheet_directory() . '/timber/controller.php';
 require get_stylesheet_directory() . '/timber/component-preview.php';
+require get_stylesheet_directory() . '/admin/controller.php';
 
 class broketheme extends Timber\Site
 {
