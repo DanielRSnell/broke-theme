@@ -1,4 +1,4 @@
-![Theme Screenshot](/theme/screenshot.png)
+![Theme Screenshot](/cover.png)
 
 # Broke Theme :evergreen_tree:
 
