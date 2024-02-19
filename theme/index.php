@@ -14,8 +14,8 @@
  */
 
 $context = Timber::context();
-$templates = array( 'index.twig' );
-if ( is_home() ) {
-	array_unshift( $templates, 'front-page.twig', 'home.twig' );
+$templates = array('index.twig');
+if (is_home()) {
+    array_unshift($templates, 'front-page.twig', 'home.twig', 'page.twig');
 }
-Timber::render( $templates, $context );
+Timber::render($templates, $context);

@@ -2,7 +2,19 @@
 
 # Broke Theme :evergreen_tree:
 
-Broke Theme is a sophisticated WordPress theme that leverages a suite of powerful tools including [Timber](https://www.upstatement.com/timber/), [Advanced Custom Fields Pro](https://www.advancedcustomfields.com/), [Laravel Mix](https://github.com/JeffreyWay/laravel-mix), [Tailwind CSS](https://tailwindcss.com/), [SWUP](https://swup.js.org/), and [Alpine.js](https://github.com/alpinejs/alpine) to create high-performance websites with editor-friendly interfaces.
+Broke Theme is a sophisticated WordPress theme that leverages a suite of powerful tools including [Timber](https://www.upstatement.com/timber/), [Advanced Custom Fields Pro](https://www.advancedcustomfields.com/), [Laravel Mix](https://github.com/JeffreyWay/laravel-mix), [Tailwind CSS](https://tailwindcss.com/), [HTMX](https://htmx.org/), and [Alpine.js](https://github.com/alpinejs/alpine) to create high-performance websites with editor-friendly interfaces.
+
+## What is WHAT Stack
+
+**WHATT** Stack stands for
+
+[W] WordPress
+[H] HTMX
+[A] Alpine
+[T] Tailwind
+[T] Timber
+
+And should be pronounced WHATTTT that's WordPress?
 
 ## Our Mission
 

@@ -14,13 +14,13 @@
 
 	<body class="{{body_class}}" data-template="base.twig">
 		{% include 'header.twig' %}
-
+	<main id="swup">
 		{% block content %}
 			Sorry, no content
 
 
 		{% endblock %}
-
+	</main>
 		{% block footer %}
 			{{ include('@helper/debug.html') }}
 

@@ -687,7 +687,8 @@ svg.cc-nav-dropdown__button--icon--modal {
 .cc-nav-content {
   display: flex;
   position: relative;
-  transition: transform var(--cc-nav-mn-duration, 0.4s),
+  transition:
+    transform var(--cc-nav-mn-duration, 0.4s),
     opacity var(--cc-nav-mn-duration, 0.4s);
 }
 .cc-nav-backdrop {
@@ -836,14 +837,17 @@ svg.cc-nav-dropdown__button--icon--modal {
 [is-modal="true"][m-animation="slidetop"] .cc-nav-header {
   opacity: 0;
   transform: var(--cc-nav-modal-translate, translateY(-10px));
-  transition: transform 0.1s, opacity 0.1s;
+  transition:
+    transform 0.1s,
+    opacity 0.1s;
   transition-delay: 0s;
 }
 [is-modal="true"][m-animation="slidetop"].cc-nav--open .cc-nav-content,
 [is-modal="true"][m-animation="slidetop"].cc-nav--open .cc-nav-header {
   opacity: 1;
   transform: var(--cc-nav-modal-translate, translateY(0));
-  transition: transform var(--cc-nav-mn-duration, 0.4s),
+  transition:
+    transform var(--cc-nav-mn-duration, 0.4s),
     opacity var(--cc-nav-mn-duration, 0.4s);
 }
 [is-modal="true"][m-animation="slidetop"].cc-nav--open.animating
@@ -993,7 +997,8 @@ svg.cc-nav-dropdown__button--icon--modal {
   pointer-events: none;
   position: absolute;
   top: 0;
-  transition: var(--cc-nav-link-duration, 0.4s) transform ease,
+  transition:
+    var(--cc-nav-link-duration, 0.4s) transform ease,
     var(--cc-nav-link-duration, 0.4s) opacity ease,
     var(--cc-nav-link-duration, 0.4s) background-color ease;
   width: 100%;
@@ -1151,7 +1156,9 @@ svg.cc-nav-dropdown__button--icon--modal {
   transform: translateY(-10px);
 }
 .cc-nav:not([is-modal="true"])[animation="slidetop"] .cc-nav__section {
-  transition: transform 0.1s, opacity 0.1s;
+  transition:
+    transform 0.1s,
+    opacity 0.1s;
   transition-delay: 0s;
 }
 .cc-nav:not([is-modal="true"])[animation="slidetop"]
@@ -1159,7 +1166,8 @@ svg.cc-nav-dropdown__button--icon--modal {
   .cc-nav__section {
   opacity: 1;
   transform: translateY(0);
-  transition: transform var(--cc-nav-da-duration, 0.4s),
+  transition:
+    transform var(--cc-nav-da-duration, 0.4s),
     opacity var(--cc-nav-da-duration, 0.4s);
   transition-delay: calc(var(--cc-nav-da-duration, 0.4s) - 0.1s);
 }
@@ -1181,7 +1189,9 @@ svg.cc-nav-dropdown__button--icon--modal {
   path {
   opacity: 0;
   transform: scaleY(-0.5);
-  transition: transform 0.1s, opacity 0.1s;
+  transition:
+    transform 0.1s,
+    opacity 0.1s;
   transition-delay: 0s;
 }
 .cc-nav:not([is-modal="true"])[animation="smallslidetop"]
@@ -1190,7 +1200,8 @@ svg.cc-nav-dropdown__button--icon--modal {
   path {
   opacity: 1;
   transform: scaleY(1);
-  transition: transform calc(var(--cc-nav-da-duration, 0.2s) * 2),
+  transition:
+    transform calc(var(--cc-nav-da-duration, 0.2s) * 2),
     opacity calc(var(--cc-nav-da-duration, 0.2s) * 2);
 }
 .cc-nav:not([is-modal="true"])[animation="mediumslidetop"]
@@ -1211,7 +1222,9 @@ svg.cc-nav-dropdown__button--icon--modal {
   path {
   opacity: 0;
   transform: scaleY(-0.5);
-  transition: transform 0.1s, opacity 0.1s;
+  transition:
+    transform 0.1s,
+    opacity 0.1s;
   transition-delay: 0s;
 }
 .cc-nav:not([is-modal="true"])[animation="mediumslidetop"]
@@ -1220,7 +1233,8 @@ svg.cc-nav-dropdown__button--icon--modal {
   path {
   opacity: 1;
   transform: scaleY(1);
-  transition: transform calc(var(--cc-nav-da-duration, 0.2s) * 2),
+  transition:
+    transform calc(var(--cc-nav-da-duration, 0.2s) * 2),
     opacity calc(var(--cc-nav-da-duration, 0.2s) * 2);
 }
 .cc-nav:not([is-modal="true"])[animation="largeslidetop"]
@@ -1241,7 +1255,9 @@ svg.cc-nav-dropdown__button--icon--modal {
   path {
   opacity: 0;
   transform: scaleY(-0.5);
-  transition: transform 0.1s, opacity 0.1s;
+  transition:
+    transform 0.1s,
+    opacity 0.1s;
   transition-delay: 0s;
 }
 .cc-nav:not([is-modal="true"])[animation="largeslidetop"]
@@ -1250,7 +1266,8 @@ svg.cc-nav-dropdown__button--icon--modal {
   path {
   opacity: 1;
   transform: scaleY(1);
-  transition: transform calc(var(--cc-nav-da-duration, 0.2s) * 2),
+  transition:
+    transform calc(var(--cc-nav-da-duration, 0.2s) * 2),
     opacity calc(var(--cc-nav-da-duration, 0.2s) * 2);
 }
 .cc-nav:not([is-modal="true"])[animation="slidebottom"]
@@ -1279,7 +1296,9 @@ svg.cc-nav-dropdown__button--icon--modal {
   transform: translateY(10px);
 }
 .cc-nav:not([is-modal="true"])[animation="slidebottom"] .cc-nav__section {
-  transition: transform 0.1s, opacity 0.1s;
+  transition:
+    transform 0.1s,
+    opacity 0.1s;
   transition-delay: 0s;
 }
 .cc-nav:not([is-modal="true"])[animation="slidebottom"]
@@ -1287,7 +1306,8 @@ svg.cc-nav-dropdown__button--icon--modal {
   .cc-nav__section {
   opacity: 1;
   transform: translateY(0);
-  transition: transform var(--cc-nav-da-duration, 0.4s),
+  transition:
+    transform var(--cc-nav-da-duration, 0.4s),
     opacity var(--cc-nav-da-duration, 0.4s);
   transition-delay: calc(var(--cc-nav-da-duration, 0.4s) - 0.1s);
 }
@@ -1309,7 +1329,9 @@ svg.cc-nav-dropdown__button--icon--modal {
   path {
   opacity: 0;
   transform: scaleY(-0.5);
-  transition: transform 0.1s, opacity 0.1s;
+  transition:
+    transform 0.1s,
+    opacity 0.1s;
   transition-delay: 0s;
 }
 .cc-nav:not([is-modal="true"])[animation="smallslidebottom"]
@@ -1318,7 +1340,8 @@ svg.cc-nav-dropdown__button--icon--modal {
   path {
   opacity: 1;
   transform: scaleY(1);
-  transition: transform calc(var(--cc-nav-da-duration, 0.2s) * 2),
+  transition:
+    transform calc(var(--cc-nav-da-duration, 0.2s) * 2),
     opacity calc(var(--cc-nav-da-duration, 0.2s) * 2);
 }
 .cc-nav:not([is-modal="true"])[animation="mediumslidebottom"]
@@ -1339,7 +1362,9 @@ svg.cc-nav-dropdown__button--icon--modal {
   path {
   opacity: 0;
   transform: scaleY(-0.5);
-  transition: transform 0.1s, opacity 0.1s;
+  transition:
+    transform 0.1s,
+    opacity 0.1s;
   transition-delay: 0s;
 }
 .cc-nav:not([is-modal="true"])[animation="mediumslidebottom"]
@@ -1348,7 +1373,8 @@ svg.cc-nav-dropdown__button--icon--modal {
   path {
   opacity: 1;
   transform: scaleY(1);
-  transition: transform calc(var(--cc-nav-da-duration, 0.2s) * 2),
+  transition:
+    transform calc(var(--cc-nav-da-duration, 0.2s) * 2),
     opacity calc(var(--cc-nav-da-duration, 0.2s) * 2);
 }
 .cc-nav:not([is-modal="true"])[animation="largeslidebottom"]
@@ -1369,7 +1395,9 @@ svg.cc-nav-dropdown__button--icon--modal {
   path {
   opacity: 0;
   transform: scaleY(-0.5);
-  transition: transform 0.1s, opacity 0.1s;
+  transition:
+    transform 0.1s,
+    opacity 0.1s;
   transition-delay: 0s;
 }
 .cc-nav:not([is-modal="true"])[animation="largeslidebottom"]
@@ -1378,7 +1406,8 @@ svg.cc-nav-dropdown__button--icon--modal {
   path {
   opacity: 1;
   transform: scaleY(1);
-  transition: transform calc(var(--cc-nav-da-duration, 0.2s) * 2),
+  transition:
+    transform calc(var(--cc-nav-da-duration, 0.2s) * 2),
     opacity calc(var(--cc-nav-da-duration, 0.2s) * 2);
 }
 .cc-nav:not([is-modal="true"])[animation="slidetopsmooth"]

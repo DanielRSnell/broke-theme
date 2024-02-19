@@ -1,5 +1,5 @@
-{% extends "base.twig" %}
+{% extends 'base.twig' %}
 
 {% block content %}
-    {{ post.content }}
+	{{ include('@component/components/index.twig' )}}
 {% endblock %}
