@@ -15,8 +15,9 @@ Broke Theme is a sophisticated WordPress theme that leverages a suite of powerfu
 [A] ACF Extended
 [T] Tailwind
 [T] Timber
+[T] Twig
 
-And should be pronounced WHATTTT that's WordPress?
+And should be pronounced WHAAATTTT that's WordPress?
 
 ## Our Mission
 
