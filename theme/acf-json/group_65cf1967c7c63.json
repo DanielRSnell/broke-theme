@@ -163,6 +163,133 @@
                     "acfe_flexible_thumbnail": "",
                     "acfe_flexible_modal_edit_size": false
                 },
+                "layout_65d463001683d": {
+                    "key": "layout_65d463001683d",
+                    "name": "blog_grid",
+                    "label": "Blog Grid",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_65d463001683e",
+                            "label": "Title",
+                            "name": "title",
+                            "aria-label": "",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "acfe_settings": "",
+                            "acfe_validate": "",
+                            "maxlength": "",
+                            "acfe_permissions": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": ""
+                        },
+                        {
+                            "key": "field_65d463001683f",
+                            "label": "Subheader",
+                            "name": "subheader",
+                            "aria-label": "",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "acfe_settings": "",
+                            "acfe_validate": "",
+                            "maxlength": "",
+                            "acfe_permissions": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": ""
+                        },
+                        {
+                            "key": "field_65d4630016840",
+                            "label": "Background",
+                            "name": "background",
+                            "aria-label": "",
+                            "type": "image",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "uploader": "",
+                            "return_format": "url",
+                            "acfe_thumbnail": 0,
+                            "acfe_settings": "",
+                            "acfe_validate": "",
+                            "min_width": "",
+                            "min_height": "",
+                            "min_size": "",
+                            "max_width": "",
+                            "max_height": "",
+                            "max_size": "",
+                            "mime_types": "",
+                            "acfe_permissions": "",
+                            "preview_size": "medium",
+                            "library": "all"
+                        },
+                        {
+                            "key": "field_65d4630016841",
+                            "label": "Logos",
+                            "name": "logos",
+                            "aria-label": "",
+                            "type": "gallery",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "url",
+                            "library": "all",
+                            "acfe_settings": "",
+                            "acfe_validate": "",
+                            "min": "",
+                            "max": "",
+                            "min_width": "",
+                            "min_height": "",
+                            "min_size": "",
+                            "max_width": "",
+                            "max_height": "",
+                            "max_size": "",
+                            "mime_types": "",
+                            "acfe_permissions": "",
+                            "insert": "append",
+                            "preview_size": "medium"
+                        }
+                    ],
+                    "min": "",
+                    "max": "",
+                    "acfe_flexible_category": [
+                        "Hero"
+                    ],
+                    "acfe_flexible_render_template": "timber\/dynamic-render.php",
+                    "acfe_flexible_render_style": "assets\/build\/app.css",
+                    "acfe_flexible_render_script": "",
+                    "acfe_flexible_settings": "",
+                    "acfe_flexible_settings_size": "medium",
+                    "acfe_flexible_thumbnail": "",
+                    "acfe_flexible_modal_edit_size": false
+                },
                 "layout_65d0b3aa3cc18": {
                     "key": "layout_65d0b3aa3cc18",
                     "name": "pricing_table",
@@ -261,5 +388,5 @@
         }
     },
     "acfe_note": "",
-    "modified": 1708416441
+    "modified": 1708417834
 }

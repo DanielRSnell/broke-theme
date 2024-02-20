@@ -1,0 +1,99 @@
+<section
+  x-cloak
+  class="fixed bottom-0 z-50 flex flex-col w-full max-w-2xl mr-auto"
+>
+  <div
+    class="gap-2 bg-gray-100 rounded-t-3xl"
+    x-data="{
+            open: false,
+            transparent: false,
+            mode: 'state',
+            size: 'lg',
+        }"
+    x-bind:class="{ 'opacity-70': transparent }"
+    x-effect="setTimeout(() => { Prism.highlightAll(); console.log('change occurred'); }, 50);"
+  >
+    <div class="flex items-center justify-between w-full px-4 pt-3 pb-2">
+      <div
+        class="flex items-center gap-2 text-base font-bold text-gray-700 divide-x-2"
+      >
+        <div class="pr-4">Broke.dev</div>
+        <div class="flex gap-2 pl-4">
+          <span
+            x-on:click="size = 'sm'"
+            class="px-2 py-1 text-xs text-gray-500 rounded-md cursor-pointer"
+            :class="{ 'bg-gray-300': size === 'sm' }"
+            >SM</span
+          >
+          <span
+            x-on:click="size = 'md'"
+            class="px-2 py-1 text-xs text-gray-500 rounded-md cursor-pointer"
+            :class="{ 'bg-gray-300': size === 'md' }"
+            >MD</span
+          >
+          <span
+            x-on:click="size = 'lg'"
+            class="px-2 py-1 text-xs text-gray-500 rounded-md cursor-pointer"
+            :class="{ 'bg-gray-300': size === 'lg' }"
+            >LG</span
+          >
+          <span
+            x-on:click="size = 'full'"
+            class="px-2 py-1 text-xs text-gray-500 rounded-md cursor-pointer"
+            :class="{ 'bg-gray-300': size === 'full' }"
+            >XL</span
+          >
+        </div>
+        <div class="flex gap-2 pl-4">
+          <span
+            x-on:click="mode = 'state'"
+            class="px-2 py-1 text-xs text-gray-500 rounded-md cursor-pointer"
+            :class="{ 'bg-gray-300': mode === 'state' }"
+            >State</span
+          >
+          <span
+            x-on:click="mode = 'components'"
+            class="px-2 py-1 text-xs text-gray-500 rounded-md cursor-pointer"
+            :class="{ 'bg-gray-300': mode === 'components' }"
+            >Components</span
+          >
+        </div>
+        <div class="pl-4">
+          <button
+            class="px-2 py-1 text-xs text-gray-500 rounded-md cursor-pointer"
+            x-on:click="transparent = !transparent"
+          >
+            <svg
+              x-show="transparent"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              class="w-4 h-4 text-base fill-gray-500 stroke-gray-500"
+              fill="currentColor"
+            >
+              <path
+                d="M1.18164 12C2.12215 6.87976 6.60812 3 12.0003 3C17.3924 3 21.8784 6.87976 22.8189 12C21.8784 17.1202 17.3924 21 12.0003 21C6.60812 21 2.12215 17.1202 1.18164 12ZM12.0003 17C14.7617 17 17.0003 14.7614 17.0003 12C17.0003 9.23858 14.7617 7 12.0003 7C9.23884 7 7.00026 9.23858 7.00026 12C7.00026 14.7614 9.23884 17 12.0003 17ZM12.0003 15C10.3434 15 9.00026 13.6569 9.00026 12C9.00026 10.3431 10.3434 9 12.0003 9C13.6571 9 15.0003 10.3431 15.0003 12C15.0003 13.6569 13.6571 15 12.0003 15Z"
+              ></path>
+            </svg>
+            <svg
+              x-show="!transparent"
+              class="w-4 h-4 text-base fill-transparent stroke-gray-500"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+            >
+              <path
+                d="M12.0003 3C17.3924 3 21.8784 6.87976 22.8189 12C21.8784 17.1202 17.3924 21 12.0003 21C6.60812 21 2.12215 17.1202 1.18164 12C2.12215 6.87976 6.60812 3 12.0003 3ZM12.0003 19C16.2359 19 19.8603 16.052 20.7777 12C19.8603 7.94803 16.2359 5 12.0003 5C7.7646 5 4.14022 7.94803 3.22278 12C4.14022 16.052 7.7646 19 12.0003 19ZM12.0003 16.5C9.51498 16.5 7.50026 14.4853 7.50026 12C7.50026 9.51472 9.51498 7.5 12.0003 7.5C14.4855 7.5 16.5003 9.51472 16.5003 12C16.5003 14.4853 14.4855 16.5 12.0003 16.5ZM12.0003 14.5C13.381 14.5 14.5003 13.3807 14.5003 12C14.5003 10.6193 13.381 9.5 12.0003 9.5C10.6196 9.5 9.50026 10.6193 9.50026 12C9.50026 13.3807 10.6196 14.5 12.0003 14.5Z"
+              ></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+      <button
+        class="px-4 py-1 text-gray-300 bg-gray-800 rounded-md"
+        x-on:click="open = !open"
+        x-text="open ? 'Deactivate' : 'Activate'"
+      ></button>
+    </div>
+    <div x-show="open">{{ include('@helper/prism.html') }}</div>
+  </div>
+</section>
