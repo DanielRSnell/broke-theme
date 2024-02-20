@@ -155,27 +155,8 @@
                     "acfe_flexible_category": [
                         "Hero"
                     ],
-                    "acfe_flexible_render_template": "",
-                    "acfe_flexible_render_style": "",
-                    "acfe_flexible_render_script": "",
-                    "acfe_flexible_settings": "",
-                    "acfe_flexible_settings_size": "medium",
-                    "acfe_flexible_thumbnail": "",
-                    "acfe_flexible_modal_edit_size": false
-                },
-                "layout_65d4596f5ad02": {
-                    "key": "layout_65d4596f5ad02",
-                    "name": "blog_grid",
-                    "label": "Blog Grid",
-                    "display": "block",
-                    "sub_fields": [],
-                    "min": "",
-                    "max": "",
-                    "acfe_flexible_category": [
-                        "Hero"
-                    ],
-                    "acfe_flexible_render_template": "",
-                    "acfe_flexible_render_style": "",
+                    "acfe_flexible_render_template": "timber\/dynamic-render.php",
+                    "acfe_flexible_render_style": "assets\/build\/app.css",
                     "acfe_flexible_render_script": "",
                     "acfe_flexible_settings": "",
                     "acfe_flexible_settings_size": "medium",
@@ -218,7 +199,7 @@
                         "Pricing"
                     ],
                     "acfe_flexible_render_template": "timber\/dynamic-render.php",
-                    "acfe_flexible_render_style": "",
+                    "acfe_flexible_render_style": "assets\/build\/app.css",
                     "acfe_flexible_render_script": "",
                     "acfe_flexible_settings": "",
                     "acfe_flexible_settings_size": "medium",
@@ -280,5 +261,5 @@
         }
     },
     "acfe_note": "",
-    "modified": 1708415352
+    "modified": 1708416441
 }
