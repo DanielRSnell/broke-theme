@@ -183,7 +183,7 @@ function acf_block_render_callback($block, $content)
     $context['post'] = Timber::get_post();
     $context['block'] = $block;
     $context['fields'] = get_fields();
-    $template = $block['path'] . '/index.twig';
+    $template = $block['path'] . '/index.html';
 
     Timber::render($template, $context);
 }

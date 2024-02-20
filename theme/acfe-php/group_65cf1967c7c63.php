@@ -20,17 +20,12 @@ acf_add_local_field_group(array(
 				'class' => '',
 				'id' => '',
 			),
-			'hide_field' => '',
-			'hide_label' => '',
-			'hide_instructions' => '',
-			'hide_required' => '',
 			'acfe_flexible_advanced' => 1,
 			'acfe_flexible_stylised_button' => 1,
 			'acfe_flexible_layouts_templates' => 1,
 			'acfe_flexible_layouts_previews' => 1,
 			'acfe_flexible_layouts_thumbnails' => 1,
 			'acfe_flexible_layouts_settings' => 1,
-			'acfe_flexible_layouts_locations' => 0,
 			'acfe_flexible_async' => array(
 				0 => 'title',
 				1 => 'layout',
@@ -56,16 +51,10 @@ acf_add_local_field_group(array(
 				'acfe_flexible_modal_col' => '4',
 				'acfe_flexible_modal_categories' => '1',
 			),
-			'acfe_flexible_grid' => array(
-				'acfe_flexible_grid_enabled' => '0',
-				'acfe_flexible_grid_align' => 'center',
-				'acfe_flexible_grid_valign' => 'stretch',
-				'acfe_flexible_grid_wrap' => false,
-			),
 			'layouts' => array(
 				'layout_65cf196cb082a' => array(
 					'key' => 'layout_65cf196cb082a',
-					'name' => 'hero-1',
+					'name' => 'hero_1',
 					'label' => 'Hero',
 					'display' => 'block',
 					'sub_fields' => array(
@@ -176,16 +165,12 @@ acf_add_local_field_group(array(
 					'acfe_flexible_render_script' => '',
 					'acfe_flexible_settings' => '',
 					'acfe_flexible_settings_size' => 'medium',
-					'acfe_layout_col' => 'auto',
-					'acfe_layout_allowed_col' => '',
-					'acfe_flexible_thumbnail' => '42',
-					'acfe_layout_locations' => array(
-					),
+					'acfe_flexible_thumbnail' => '',
 					'acfe_flexible_modal_edit_size' => false,
 				),
 				'layout_65d0b3aa3cc18' => array(
 					'key' => 'layout_65d0b3aa3cc18',
-					'name' => 'pricing-table',
+					'name' => 'pricing_table',
 					'label' => 'Pricing Table',
 					'display' => 'block',
 					'sub_fields' => array(
@@ -223,16 +208,11 @@ acf_add_local_field_group(array(
 					'acfe_flexible_render_script' => '',
 					'acfe_flexible_settings' => '',
 					'acfe_flexible_settings_size' => 'medium',
-					'acfe_layout_col' => 'auto',
-					'acfe_layout_allowed_col' => '',
-					'acfe_flexible_thumbnail' => '41',
-					'acfe_layout_locations' => array(
-					),
+					'acfe_flexible_thumbnail' => '',
 					'acfe_flexible_modal_edit_size' => false,
 				),
 			),
 			'acfe_settings' => '',
-			'instruction_placement' => '',
 			'acfe_permissions' => '',
 			'min' => '',
 			'max' => '',
@@ -240,7 +220,6 @@ acf_add_local_field_group(array(
 			'acfe_flexible_hide_empty_message' => false,
 			'acfe_flexible_empty_message' => '',
 			'acfe_flexible_layouts_placeholder' => false,
-			'acfe_flexible_grid_container' => false,
 		),
 	),
 	'location' => array(
@@ -251,6 +230,13 @@ acf_add_local_field_group(array(
 				'value' => 'page',
 			),
 		),
+		array(
+			array(
+				'param' => 'taxonomy',
+				'operator' => '==',
+				'value' => 'all',
+			),
+		),
 	),
 	'menu_order' => 0,
 	'position' => 'normal',
@@ -258,21 +244,21 @@ acf_add_local_field_group(array(
 	'label_placement' => 'top',
 	'instruction_placement' => 'label',
 	'hide_on_screen' => array(
-		0 => 'comments',
-		1 => 'discussion',
+		0 => 'discussion',
+		1 => 'comments',
 		2 => 'revisions',
 		3 => 'slug',
 	),
 	'active' => true,
 	'description' => '',
 	'show_in_rest' => 1,
+	'acfe_display_title' => 'Components',
 	'acfe_autosync' => array(
 		0 => 'php',
 		1 => 'json',
 	),
-	'acfe_form' => 1,
-	'acfe_display_title' => 'Components',
 	'acfe_permissions' => '',
+	'acfe_form' => 1,
 	'acfe_meta' => array(
 		'65d01edfd86e7' => array(
 			'acfe_meta_key' => '',
@@ -280,7 +266,7 @@ acf_add_local_field_group(array(
 		),
 	),
 	'acfe_note' => '',
-	'modified' => 1708214987,
+	'modified' => 1708410312,
 ));
 
 endif;

@@ -1,7 +1,7 @@
 {
   "apiVersion": 2,
-  "name": "acf/example",
-  "title": "Example",
+  "name": "acf/[block-name]",
+  "title": "[block]",
   "description": "",
   "category": "custom",
   "acf": {
