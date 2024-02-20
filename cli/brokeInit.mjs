@@ -39,7 +39,7 @@ async function init() {
     tutorial: "YOUTUBE_URL_HERE"
   };
 
-  await fs.writeJson(path.join(process.cwd(), 'theme', 'cli', 'broke.json'), configData, { spaces: 2 });
+  await fs.writeJson(path.join(process.cwd(), 'cli', 'broke.json'), configData, { spaces: 2 });
   console.log(chalk.green('Configuration saved successfully.'));
 
   if (answers.browserSync) {

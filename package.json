@@ -9,7 +9,10 @@
     "watch-poll": "mix watch -- --watch-options-poll=1000",
     "hot": "mix watch --hot",
     "production": "mix --production",
-    "format": "prettier --write \"**/*.{html,css,json, js}\""
+    "format": "prettier --write \"**/*.{html,css,json, js}\"",
+    "broke": "node ./cli/brokeInit.mjs",
+    "broke:block": "node ./cli/createBlock.mjs",
+    "broke:layout": "node ./cli/createLayout.mjs"
   },
   "repository": {
     "type": "git",

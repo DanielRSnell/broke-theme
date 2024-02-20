@@ -160,8 +160,28 @@ acf_add_local_field_group(array(
 					'acfe_flexible_category' => array(
 						0 => 'Hero',
 					),
-					'acfe_flexible_render_template' => 'timber/dynamic-render.php',
-					'acfe_flexible_render_style' => 'assets/build/app.css',
+					'acfe_flexible_render_template' => '',
+					'acfe_flexible_render_style' => '',
+					'acfe_flexible_render_script' => '',
+					'acfe_flexible_settings' => '',
+					'acfe_flexible_settings_size' => 'medium',
+					'acfe_flexible_thumbnail' => '',
+					'acfe_flexible_modal_edit_size' => false,
+				),
+				'layout_65d4596f5ad02' => array(
+					'key' => 'layout_65d4596f5ad02',
+					'name' => 'blog_grid',
+					'label' => 'Blog Grid',
+					'display' => 'block',
+					'sub_fields' => array(
+					),
+					'min' => '',
+					'max' => '',
+					'acfe_flexible_category' => array(
+						0 => 'Hero',
+					),
+					'acfe_flexible_render_template' => '',
+					'acfe_flexible_render_style' => '',
 					'acfe_flexible_render_script' => '',
 					'acfe_flexible_settings' => '',
 					'acfe_flexible_settings_size' => 'medium',
@@ -266,7 +286,7 @@ acf_add_local_field_group(array(
 		),
 	),
 	'acfe_note' => '',
-	'modified' => 1708410312,
+	'modified' => 1708415352,
 ));
 
 endif;
