@@ -10,7 +10,7 @@
 
 {% block content %}
 
-	{{ include('@component/' ~ path ~ '/' ~ component ~ '/index.html') }}
+	<iframe height="500px" width="800px" src="/?component={{component}}">
 
 	{% set state = params %}
 

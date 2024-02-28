@@ -26,6 +26,6 @@
   x-effect="Prism.highlightAll(); console.log('change occured')"
 > 
   <code class="language-json">
-  {{ function('json_encode', components, constant('JSON_PRETTY_PRINT')) | escape('html') }}
-  </code>
+{{ state | json_encode(constant('JSON_PRETTY_PRINT')) }}  
+</code>
 </pre>

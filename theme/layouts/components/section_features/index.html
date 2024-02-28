@@ -1,0 +1,227 @@
+<section class="lg:p-8 lg:-mt-8 bg-gray-50">
+  <div
+    class="max-w-screen-xl px-4 py-8 pt-20 mx-auto bg-transaprent sm:py-16 lg:py-24 sm:pt-24 lg:pt-32"
+  >
+    <div>
+      <h2
+        class="mt-6 text-3xl font-bold tracking-tighter text-transparent lg:text-4xl text-gray-950 bg-gradient-to-br from-primary-dark via-primary to-primary-dark bg-clip-text"
+      >
+        Going Solar Should Be a<span
+          class="block font-bold text-transparent md:block bg-gradient-to-br from-primary-dark to-primary bg-clip-text"
+          >No Brainer, Not a Headache!</span
+        >
+      </h2>
+
+      <p class="max-w-md mt-4 text-base text-gray-950">
+        Are you overwhelmed with all the options and jargon and choose to do
+        nothing instead?
+      </p>
+
+      <p class="block py-4">
+        This all goes away with a
+        <span class="font-bold">Solar Subscription</span>.
+      </p>
+    </div>
+
+    <div
+      class="flex flex-col w-full"
+      x-data="{
+        skip: 1,
+        atBeginning: false,
+        atEnd: false,
+        next() {
+            this.to((current, offset) =>current + (offset * this.skip))
+        },
+        prev() {
+            this.to((current, offset) =>current - (offset * this.skip))
+        },
+        to(strategy) {
+            let slider = this.$refs.slider
+            let current = slider.scrollLeft
+            let offset = slider.firstElementChild.getBoundingClientRect().width
+            slider.scrollTo({ left: strategy(current, offset), behavior: 'smooth' })
+        },
+        focusableWhenVisible: {
+            'x-intersect:enter'() {
+                this.$el.removeAttribute('tabindex')
+            },
+            'x-intersect:leave'() {
+                this.$el.setAttribute('tabindex', '-1')
+            },
+        },
+        disableNextAndPreviousButtons: {
+            'x-intersect:enter.threshold.05'() {
+                let slideEls = this.$el.parentElement.children
+                // If this is the first slide.
+                if (slideEls[0] === this.$el) {
+                    this.atBeginning = true
+                // If this is the last slide.
+                } else if (slideEls[slideEls.length-1] === this.$el) {
+                    this.atEnd = true
+                }
+            },
+            'x-intersect:leave.threshold.05'() {
+                let slideEls = this.$el.parentElement.children
+                // If this is the first slide.
+                if (slideEls[0] === this.$el) {
+                    this.atBeginning = false
+                // If this is the last slide.
+                } else if (slideEls[slideEls.length-1] === this.$el) {
+                    this.atEnd = false
+                }
+            },
+        },
+    }"
+    >
+      <div
+        class="flex flex-col w-full"
+        aria-labelledby="carousel-label"
+        role="region"
+        tabindex="0"
+        x-on:keydown.left="prev"
+        x-on:keydown.right="next"
+      >
+        <h2
+          class="sr-only"
+          hidden=""
+        >
+          Carousel
+        </h2>
+
+        <span
+          class="sr-only"
+          hidden=""
+          >Carousel</span
+        >
+
+        <ul
+          class="flex w-full gap-3 pt-12 pb-24 scrollbar-hide snap-mandatory snap-x"
+          role="listbox"
+          aria-labelledby="carousel-content-label"
+          tabindex="0"
+          x-ref="slider"
+        >
+          <li
+            class="flex flex-col items-center justify-center w-full shrink-0"
+            role="option"
+            x-bind="disableNextAndPreviousButtons"
+          >
+            <ul class="grid grid-cols-1 gap-3 lg:grid-cols-4 group">
+              <li
+                class="p-4 bg-gradient-to-br from-primary/30 via-primary-light to-primary/30 shadow-inset rounded-3xl"
+              >
+                <figure>
+                  <div>
+                    <svg
+                      class="icon icon-tabler icon-tabler-circle-check text-gray-950 cc-svg"
+                      viewBox="0 0 24 28"
+                    >
+                      <path
+                        d="M16 21.5v-2.5c0-0.281-0.219-0.5-0.5-0.5h-1.5v-8c0-0.281-0.219-0.5-0.5-0.5h-5c-0.281 0-0.5 0.219-0.5 0.5v2.5c0 0.281 0.219 0.5 0.5 0.5h1.5v5h-1.5c-0.281 0-0.5 0.219-0.5 0.5v2.5c0 0.281 0.219 0.5 0.5 0.5h7c0.281 0 0.5-0.219 0.5-0.5zM14 7.5v-2.5c0-0.281-0.219-0.5-0.5-0.5h-3c-0.281 0-0.5 0.219-0.5 0.5v2.5c0 0.281 0.219 0.5 0.5 0.5h3c0.281 0 0.5-0.219 0.5-0.5zM24 14c0 6.625-5.375 12-12 12s-12-5.375-12-12 5.375-12 12-12 12 5.375 12 12z"
+                      ></path>
+                    </svg>
+
+                    <p
+                      class="mt-24 font-medium font-bold leading-6 text-gray-950"
+                    >
+                      Immediate Savings
+                    </p>
+
+                    <p class="mt-2 text-xs text-broke-400">
+                      Save money on your monthly power bill, or we will cover
+                      the difference.
+                    </p>
+                  </div>
+                </figure>
+              </li>
+
+              <li
+                class="p-4 bg-gradient-to-br from-primary/30 via-primary-light to-primary/30 shadow-inset rounded-3xl"
+              >
+                <figure>
+                  <div>
+                    <svg
+                      class="icon icon-tabler icon-tabler-circle-check text-gray-950 cc-svg"
+                      viewBox="0 0 24 28"
+                    >
+                      <path
+                        d="M16 21.5v-2.5c0-0.281-0.219-0.5-0.5-0.5h-1.5v-8c0-0.281-0.219-0.5-0.5-0.5h-5c-0.281 0-0.5 0.219-0.5 0.5v2.5c0 0.281 0.219 0.5 0.5 0.5h1.5v5h-1.5c-0.281 0-0.5 0.219-0.5 0.5v2.5c0 0.281 0.219 0.5 0.5 0.5h7c0.281 0 0.5-0.219 0.5-0.5zM14 7.5v-2.5c0-0.281-0.219-0.5-0.5-0.5h-3c-0.281 0-0.5 0.219-0.5 0.5v2.5c0 0.281 0.219 0.5 0.5 0.5h3c0.281 0 0.5-0.219 0.5-0.5zM24 14c0 6.625-5.375 12-12 12s-12-5.375-12-12 5.375-12 12-12 12 5.375 12 12z"
+                      ></path>
+                    </svg>
+
+                    <p
+                      class="mt-24 font-medium font-bold leading-6 text-gray-950"
+                    >
+                      Price Protection
+                    </p>
+
+                    <p class="mt-2 text-xs text-broke-400">
+                      Gain peace of mind with locked-in prices and immunity from
+                      price increases.
+                    </p>
+                  </div>
+                </figure>
+              </li>
+
+              <li
+                class="p-4 bg-gradient-to-br from-primary/30 via-primary-light to-primary/30 shadow-inset rounded-3xl"
+              >
+                <figure>
+                  <div>
+                    <svg
+                      class="icon icon-tabler icon-tabler-circle-check text-gray-950 cc-svg"
+                      viewBox="0 0 24 28"
+                    >
+                      <path
+                        d="M16 21.5v-2.5c0-0.281-0.219-0.5-0.5-0.5h-1.5v-8c0-0.281-0.219-0.5-0.5-0.5h-5c-0.281 0-0.5 0.219-0.5 0.5v2.5c0 0.281 0.219 0.5 0.5 0.5h1.5v5h-1.5c-0.281 0-0.5 0.219-0.5 0.5v2.5c0 0.281 0.219 0.5 0.5 0.5h7c0.281 0 0.5-0.219 0.5-0.5zM14 7.5v-2.5c0-0.281-0.219-0.5-0.5-0.5h-3c-0.281 0-0.5 0.219-0.5 0.5v2.5c0 0.281 0.219 0.5 0.5 0.5h3c0.281 0 0.5-0.219 0.5-0.5zM24 14c0 6.625-5.375 12-12 12s-12-5.375-12-12 5.375-12 12-12 12 5.375 12 12z"
+                      ></path>
+                    </svg>
+
+                    <p
+                      class="mt-24 font-medium font-bold leading-6 text-gray-950"
+                    >
+                      Service &amp; Maintenance
+                    </p>
+
+                    <p class="mt-2 text-xs text-broke-400">
+                      Never worry about upkeep. We ensure everything works from
+                      day one and keep it that way
+                    </p>
+                  </div>
+                </figure>
+              </li>
+
+              <li
+                class="p-4 bg-gradient-to-br from-primary/30 via-primary-light to-primary/30 shadow-inset rounded-3xl"
+              >
+                <figure>
+                  <div>
+                    <svg
+                      class="icon icon-tabler icon-tabler-circle-check text-gray-950 cc-svg"
+                      viewBox="0 0 24 28"
+                    >
+                      <path
+                        d="M16 21.5v-2.5c0-0.281-0.219-0.5-0.5-0.5h-1.5v-8c0-0.281-0.219-0.5-0.5-0.5h-5c-0.281 0-0.5 0.219-0.5 0.5v2.5c0 0.281 0.219 0.5 0.5 0.5h1.5v5h-1.5c-0.281 0-0.5 0.219-0.5 0.5v2.5c0 0.281 0.219 0.5 0.5 0.5h7c0.281 0 0.5-0.219 0.5-0.5zM14 7.5v-2.5c0-0.281-0.219-0.5-0.5-0.5h-3c-0.281 0-0.5 0.219-0.5 0.5v2.5c0 0.281 0.219 0.5 0.5 0.5h3c0.281 0 0.5-0.219 0.5-0.5zM24 14c0 6.625-5.375 12-12 12s-12-5.375-12-12 5.375-12 12-12 12 5.375 12 12z"
+                      ></path>
+                    </svg>
+
+                    <p
+                      class="mt-24 font-medium font-bold leading-6 text-gray-950"
+                    >
+                      Remote Monitoring
+                    </p>
+
+                    <p class="mt-2 text-xs text-broke-400">
+                      Use our digital tools and real-time data to track
+                      performance and ensure savings.
+                    </p>
+                  </div>
+                </figure>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>

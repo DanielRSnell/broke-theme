@@ -1,0 +1,13 @@
+<pre
+  style="
+    max-height: 500px;
+    width: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    border-radius: 1rem;
+  "
+  x-effect="Prism.highlightAll(); console.log('change occured')"
+> 
+<code class="language-json">{{ state | json_encode(constant('JSON_PRETTY_PRINT')) }}  
+</code>
+    </pre>

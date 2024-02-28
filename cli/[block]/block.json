@@ -3,7 +3,7 @@
   "name": "acf/[block-name]",
   "title": "[block]",
   "description": "",
-  "category": "custom",
+  "category": "[category]",
   "acf": {
     "mode": "preview",
     "renderCallback": "acf_block_render_callback"

@@ -3,3 +3,160 @@
 @import-glob "../../blocks/**/*.css";
 @import "theme";
 @import "tailwindcss/utilities";
+
+#wrapper-navbar {
+  display: none;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+@keyframes breathingEffect {
+  0%,
+  100% {
+    box-shadow: 0 0 15px 5px rgba(255, 165, 0, 0.7);
+    opacity: 1;
+  }
+
+  50% {
+    box-shadow: 0 0 25px 15px rgba(255, 165, 0, 0.5);
+    opacity: 0.8;
+  }
+}
+
+#sphere,
+#sphere_2,
+#sphere_3,
+#sphere_4,
+#sphere_5 {
+  animation-name: breathingEffect;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+#sphere_2 {
+  animation-delay: 0.2s;
+}
+
+#sphere_3 {
+  animation-delay: 0.4s;
+}
+
+#sphere_4 {
+  animation-delay: 0.6s;
+}
+
+#sphere_5 {
+  animation-delay: 0.8s;
+}
+
+.sun-shadow-glow {
+  animation-name: breathingEffect;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+input:focus {
+  outline: none;
+  /* Remove default focus outline */
+  box-shadow: 0 0 0 2px #f59e0b !important;
+  /* Apply custom focus ring */
+  border-color: #f59e0b !important;
+  /* Change border color if needed */
+}
+
+.autocomplete-results {
+  position: absolute;
+  z-index: 50;
+  max-width: 21rem;
+  background-color: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+  padding: 1rem;
+  box-shadow:
+    0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  border-radius: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 0.5rem;
+}
+
+/* Mobile styles (Tailwind's default, no media query needed) */
+.autocomplete-results {
+  top: 50%;
+  left: 6%;
+}
+
+/* Tablet (md: 768px) */
+@media (min-width: 768px) {
+  .autocomplete-results {
+    top: 48%;
+    left: 4%;
+  }
+}
+
+/* Laptop (lg: 1024px) */
+@media (min-width: 1024px) {
+  .autocomplete-results {
+    left: 8%;
+    top: 58%;
+  }
+}
+
+/* Desktop (xl: 1280px and above) */
+@media (min-width: 1280px) {
+  .autocomplete-results {
+    top: 58%;
+    left: 22%;
+  }
+}
+
+/* For WebKit browsers */
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  background: #facc15;
+  border: 1px solid white;
+  /* Add other styles for the thumb here (size, border, etc.) */
+}
+
+/* For Mozilla Firefox */
+input[type="range"]::-moz-range-thumb {
+  background: #facc15;
+  /* Add other styles for the thumb here (size, border, etc.) */
+}
+
+/* For Microsoft Edge */
+input[type="range"]::-ms-thumb {
+  background: #facc15;
+  /* Add other styles for the thumb here (size, border, etc.) */
+}
+
+@keyframes breathing-sun {
+  0%,
+  100% {
+    box-shadow:
+      0 0 20px 10px rgba(254, 249, 195, 0.7),
+      0 0 40px 20px rgba(250, 204, 21, 0.5),
+      0 0 60px 30px rgba(245, 158, 11, 0.3);
+  }
+
+  50% {
+    box-shadow:
+      0 0 30px 15px rgba(254, 249, 195, 0.9),
+      0 0 50px 25px rgba(250, 204, 21, 0.7),
+      0 0 70px 35px rgba(245, 158, 11, 0.5);
+  }
+}
+
+.sun-breathing {
+  box-shadow:
+    0 0 20px 10px #fef9c3,
+    0 0 40px 20px #facc15,
+    0 0 60px 30px #f59e0b;
+  animation: breathing-sun 3s ease-in-out infinite;
+}

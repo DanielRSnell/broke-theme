@@ -1,32 +1,43 @@
 <!doctype html>
 <html {{ site.language_attributes }}>
-	<head>
-		<meta charset="{{ site.charset }}"/>
+<head>
+    <meta charset="{{ site.charset }}"/>
+    
+    <!-- Adjust viewport for iframe content to enforce desktop rendering -->
+    <meta name="viewport" content="initial-scale=1 shrink-to-fit=no">
 
+    <link rel="pingback" href="{{ site.pingback_url }}"/>
+    <style>
+        [x-cloak] { display: none; }
 
-		<meta id="iframe-manager-{{ params.breakpoint }}" name="viewport" content="width={{ breakpoint(params.breakpoint) }}, initial-scale=1">
+        /* Ensuring that the iframe content does not scale down */
+        body, html {
+            overflow: hidden; /* Enable scrolling within the iframe */
+            max-width: 1480px;
+			height: 100%;
+			width: 100%;
+            margin: 0 auto; /* Center the content if the iframe is wider than the max-width */
+			transform: scale(1);
+		}
 
+		.preview-partial {
+			transform: scale(0.5);
+		}
+        /* Additional styles to ensure iframe content appearance is consistent with desktop view */
+        /* Customize these styles according to your component's specific needs */
+    </style>
+    {{ function('wp_head') }}
+</head>
+<body class="preview-partial" data-template="base.twig">
+    {% include 'header.twig' %}
 
-		<link rel="pingback" href="{{ site.pingback_url }}"/>
-		<style>
-			[x-cloak] {
-				display: none;
-			}
-		</style>
-		{{ function('wp_head') }}
-	</head>
+    {% block content %}
+        Sorry, no content
+    {% endblock %}
 
-	<body class="{{ body_class }}" data-template="base.twig">
-		{% include 'header.twig' %}
-
-		{% block content %}
-			Sorry, no content
-		{% endblock %}
-
-
-		{% block footer %}
-			{% include 'footer.twig' %}
-			{{ function('wp_footer') }}
-		{% endblock %}
-	</body>
+    {% block footer %}
+        {% include 'footer.twig' %}
+        {{ function('wp_footer') }}
+    {% endblock %}
+</body>
 </html>

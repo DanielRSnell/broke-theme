@@ -1,0 +1,7 @@
+{
+  "name": "beacon",
+  "local": "http://broke-beacon.local",
+  "production": "https://beacon.eco",
+  "docs": "https://broke.dev/theme/docs",
+  "tutorial": "YOUTUBE_URL_HERE"
+}

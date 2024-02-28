@@ -4,6 +4,17 @@
 
 <section class="component-preview">
 	<div class="component-preview__preview" style="width: {{ preview_size }}; height: {{ preview_size }};">
-		{% include(path) %}
+		{{ include(path) }}
 	</div>
 </section>
+
+<style>
+.acfe-fc-placeholder,
+.acfe-fc-preview {
+  overflow: hidden !important;
+}
+
+.layout > .acfe-fc-placeholder {
+  overflow: hidden !important;
+}
+</style>

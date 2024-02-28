@@ -1,0 +1,162 @@
+<section
+  id="estimate"
+  class="flex flex-col justify-start lg:h-screen mg:overflow-hidden"
+>
+  <div
+    class="absolute inset-y-0 right-1/2 -z-10 -mr-96 w-[200%] origin-top-right skew-x-[-30deg] bg-white shadow-xl shadow-indigo-600/10 ring-1 ring-indigo-50 sm:-mr-80 lg:-mr-96 hidden lg:block"
+    aria-hidden="true"
+  ></div>
+
+  <div
+    class="max-w-screen-xl px-4 py-8 pt-20 mx-auto bg-transaprent sm:py-16 lg:py-24 sm:pt-24 lg:pt-24"
+  >
+    <div class="grid w-full bg-transparent lg:gap-12 xl:gap-0 lg:grid-cols-12">
+      <div class="z-10 mr-auto text-left place-self-center lg:col-span-7">
+        <div class="py-8">
+          <img
+            decoding="async"
+            width="300"
+            height="88"
+            class="h-16 wp-image-718 w-fit cc-img"
+            src="https://beacon-v2.local/wp-content/uploads/2024/01/Logo-Black-1-3-300x88.png"
+            alt=""
+            srcset="
+              https://beacon-v2.local/wp-content/uploads/2024/01/Logo-Black-1-3-300x88.png    300w,
+              https://beacon-v2.local/wp-content/uploads/2024/01/Logo-Black-1-3-1024x302.png 1024w,
+              https://beacon-v2.local/wp-content/uploads/2024/01/Logo-Black-1-3-768x226.png   768w,
+              https://beacon-v2.local/wp-content/uploads/2024/01/Logo-Black-1-3-1536x453.png 1536w,
+              https://beacon-v2.local/wp-content/uploads/2024/01/Logo-Black-1-3.png          1832w
+            "
+            sizes="(max-width: 300px) 100vw, 300px"
+          />
+        </div>
+
+        <div class="flex items-center justify-start gap-4 mb-4">
+          <h1
+            class="mt-6 text-4xl font-black tracking-tighter text-transparent capitalize lg:text-6xl bg-gradient-to-br from-primary-dark via-primary to-primary-dark bg-clip-text"
+          >
+            Risk Free, Affordable<span class="block">Solar Subscriptions</span>
+          </h1>
+        </div>
+
+        <p
+          class="max-w-lg max-w-2xl mb-6 mr-auto text-gray-800 lg:mb-8 md:text-lg"
+        >
+          Get all the savings without the hassle, confusion and upfront cost. We
+          handle everything.
+        </p>
+
+        <div class="p-2 bg-primary/30 backdrop-blur-sm rounded-3xl">
+          <form
+            class="flex flex-col items-start justify-center gap-6 p-4 bg-gray-50 ring-1 ring-primary/30 rounded-2xl"
+            style="position: relative"
+            x-data="{monthly: 150, input: null, search: true, 
+               formSubmit(e) {
+                   e.preventDefault();
+                   window.location.href = `/results?input=${encodeURIComponent(this.input)}&amp;monthly=${encodeURIComponent(this.monthly)}`;
+               }}"
+            x-on:click.away="search = false"
+            x-on:submit="formSubmit"
+          >
+            <label
+              for="monthly-bill-range"
+              class="hidden md:block absolute -top-8 -right-[10%] flex items-center justify-center py-4 mb-2 text-base font-bold text-gray-900 bg-white/70 backdrop-blur-2xl"
+            >
+              <div class="text-6xl rotate-6">
+                <span
+                  class="px-1 px-2 text-transparent rounded-lg sun-shadow-glow bg-gradient-to-br rotate-6 from-primary-dark via-primary to-primary-lightest bg-clip-text"
+                  x-text="'$' + monthly"
+                  >$150</span
+                >
+              </div>
+            </label>
+            <div class="flex flex-col w-full gap- md:max-w-xs">
+              <label
+                for="steps-range"
+                class="block mb-2 text-2xl font-light text-center text-gray-900 lg:text-3xl dark:text-black md:text-left"
+                ><span class="block py-4"
+                  >What’s your
+                  <span class="font-bold">average monthly bill</span>?
+                  <span
+                    class="block py-4 md:hidden"
+                    x-text="'$' + monthly"
+                    >$150</span
+                  ></span
+                >
+              </label>
+              <input
+                required=""
+                id="steps-range"
+                x-model="monthly"
+                type="range"
+                min="0"
+                max="500"
+                value="150"
+                step="50"
+                class="w-full h-2 rounded-lg appearance-none cursor-pointer bg-gray-200/90 backdrop-blur-md"
+              />
+            </div>
+            <div
+              id="autocomplete_container"
+              class="relative z-10 flex flex-col w-full gap-2 md:max-w-sm"
+            >
+              <input
+                autocomplete="off"
+                required=""
+                x-model="input"
+                hx-get="/htmx"
+                hx-select="#results"
+                hx-target="#results"
+                hx-trigger="input changed delay:500ms, search"
+                hx-swap="outerHTML"
+                name="address"
+                partial="autocomplete"
+                x-on:click="search = true"
+                placeholder="What's your address?"
+                class="w-full px-4 py-2 form-control bg-neutral-100/90 text-gray-900/90 rounded-2xl ring-primary/30 ring-2 focus:ring-primary/50 border-primary/30"
+              />
+              <ul
+                x-show="search"
+                id="results"
+                class="absolute top-0 flex flex-col w-full px-2 bg-gradient-to-br from-primary/70 to-primary-lightest/30 rounded-2xl"
+              ></ul>
+              <input
+                hidden=""
+                name="partial"
+                value="autocomplete"
+              />
+            </div>
+
+            <button class="search-btn">Get Your Estimate</button>
+          </form>
+        </div>
+      </div>
+
+      <div
+        class="z-0 hidden lg:mt-0 lg:col-span-5 lg:flex"
+        x-data="{show: false}"
+        x-init="setTimeout(() =>show = true, 100)"
+      >
+        <img
+          class="translate-x-[15%] translate-y-[20%] rotate-180 sr-only lg:not-sr-only sun-breathing rounded-full lg:absolute -mt-24 -right-64 wp-image-759 md:max-w-[48rem] max-w-lg max-w-[100vh] 2xl:max-w-[65rem] cc-img"
+          src="https://beacon-v2.local/wp-content/uploads/2024/01/sun-2.svg"
+          alt=""
+          decoding="async"
+          x-show="show"
+          x-transition:enter="transition ease-out duration-1000"
+          x-transition:enter-start="transform opacity-0 translate-x-full translate-y-[50%]"
+          x-transition:enter-end="transform opacity-100 translate-x-[15%] translate-y-[20%]"
+          x-transition:leave="transition ease-in duration-1000"
+          x-transition:leave-start="transform opacity-100 translate-x-[15%] translate-y-0"
+          x-transition:leave-end="transform opacity-0 translate-x-[15%] translate-y-[20%]"
+          srcset=""
+          sizes=""
+        />
+      </div>
+    </div>
+  </div>
+
+  <div
+    class="absolute inset-x-0 bottom-0 h-24 -z-10 bg-gradient-to-t from-white sm:h-32"
+  ></div>
+</section>

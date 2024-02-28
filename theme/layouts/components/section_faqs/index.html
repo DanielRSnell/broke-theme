@@ -1,0 +1,1098 @@
+<section class="bg-gray-50 lg:p-8">
+  <div
+    class="flex flex-col justify-between max-w-screen-xl gap-6 px-4 py-8 mx-auto sm:py-16 lg:px-6"
+    x-data="{ active: 'solar' }"
+  >
+    <div
+      class="flex flex-col items-center justify-center pb-12 lg:justify-start"
+    >
+      <h2
+        class="mb-8 text-4xl font-extrabold tracking-tight text-center text-transparent text-gray-900 bg-gradient-to-br from-primary-dark via-primary to-primary-dark bg-clip-text"
+      >
+        You Have Questions<span
+          class="block text-transparent from-primary-dark to-primary bg-gradient-to-br bg-clip-text"
+          >We Have Answers</span
+        >
+      </h2>
+
+      <div class="flex w-full max-w-xs mx-auto">
+        <div
+          id="tablist-ce583fe"
+          class="flex items-stretch justify-center w-full gap-2 px-1 py-1 bg-white border-2 border-solid rounded-full shadow-inner border-zinc-900/10 min-w-sm"
+          role="tablist"
+          aria-orientation="horizontal"
+          dir="ltr"
+        >
+          <button
+            id="tab-c66cab0"
+            class="flex items-center justify-center w-full font-semibold shadow-inner cc-tab-active bg-gray-50 shadow-primary-light/30"
+            x-on:click="active = 'solar'"
+            x-bind:class="active === 'solar' ? 'bg-gray-50 shadow-inner shadow-primary-light/30 font-semibold' :  ''"
+            type="button"
+            role="tab"
+            tabindex="-1"
+            aria-selected="false"
+          >
+            <h1>Solar</h1>
+          </button>
+
+          <button
+            id="tab-ca686d2"
+            class="flex items-center justify-center w-full cc-tab-hidden"
+            x-on:click="active = 'subscription'"
+            x-bind:class="active === 'subscription' ? 'bg-gray-50 shadow-inner shadow-primary-light/30 font-semibold' :  ''"
+            type="button"
+            role="tab"
+            tabindex="-1"
+            aria-selected="false"
+          >
+            <h1>Subscription</h1>
+          </button>
+        </div>
+
+        <div class="hidden bg-gray-100"></div>
+      </div>
+    </div>
+
+    <div class="flex-col items-stretch w-full max-w-2xl gap-4 mx-auto mb-10">
+      <div
+        id="query-cac711a"
+        class="flex w-full max-w-2xl mx-auto"
+        x-show.transition="active == 'solar'"
+        data-query_id="331"
+      >
+        <div
+          id="tab-list"
+          class="flex flex-col w-full px-4 py-8 divide-y-2 shadow-inner querytemplate-c749533 divide-2 rounded-3xl divide-zinc-100/30 backdrop-blur-lg breathing-sun-opacity-20 sun-breathing-opacity-20"
+          cc-query-template=""
+        >
+          <div class="cc-query-item">
+            <div
+              class="flex flex-col gap-2 py-4 fadeInStaggered"
+              x-data="{ expanded: false }"
+            >
+              <div
+                class="flex flex-row items-center justify-between cursor-pointer"
+                x-on:click="expanded = !expanded"
+              >
+                <div class="flex items-center gap-2">
+                  <svg
+                    class="2xl:fill-primary-dark 2xl:size-4 cc-svg"
+                    viewBox="0 0 24 28"
+                  >
+                    <path
+                      d="M14 21.5v-3c0-0.281-0.219-0.5-0.5-0.5h-3c-0.281 0-0.5 0.219-0.5 0.5v3c0 0.281 0.219 0.5 0.5 0.5h3c0.281 0 0.5-0.219 0.5-0.5zM18 11c0-2.859-3-5-5.688-5-2.547 0-4.453 1.094-5.797 3.328-0.141 0.219-0.078 0.5 0.125 0.656l2.063 1.563c0.078 0.063 0.187 0.094 0.297 0.094 0.141 0 0.297-0.063 0.391-0.187 0.734-0.938 1.047-1.219 1.344-1.437 0.266-0.187 0.781-0.375 1.344-0.375 1 0 1.922 0.641 1.922 1.328 0 0.812-0.422 1.219-1.375 1.656-1.109 0.5-2.625 1.797-2.625 3.313v0.562c0 0.281 0.219 0.5 0.5 0.5h3c0.281 0 0.5-0.219 0.5-0.5v0c0-0.359 0.453-1.125 1.188-1.547 1.188-0.672 2.812-1.578 2.812-3.953zM24 14c0 6.625-5.375 12-12 12s-12-5.375-12-12 5.375-12 12-12 12 5.375 12 12z"
+                    ></path>
+                  </svg>
+
+                  <h1 class="font-semibold text-zinc-950/90">
+                    How long will my solar panels last?
+                  </h1>
+                </div>
+
+                <svg
+                  class="cc-svg"
+                  viewBox="0 0 16 28"
+                >
+                  <path
+                    d="M16 11c0 0.266-0.109 0.516-0.297 0.703l-7 7c-0.187 0.187-0.438 0.297-0.703 0.297s-0.516-0.109-0.703-0.297l-7-7c-0.187-0.187-0.297-0.438-0.297-0.703 0-0.547 0.453-1 1-1h14c0.547 0 1 0.453 1 1z"
+                  ></path>
+                </svg>
+              </div>
+
+              <div
+                x-show="expanded"
+                x-collapse=""
+                style="display: none; height: 0px; overflow: hidden"
+                hidden=""
+              >
+                <p class="text-zinc-500">
+                  Most solar companies claim their solar panels will produce at
+                  a profitable efficiency for at least 25 years. This means over
+                  time, your solar panels will suffer a slight degradation,
+                  which is about 0.8-1.2 percent per year of original
+                  efficiency.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="cc-query-item">
+            <div
+              class="flex flex-col gap-2 py-4 fadeInStaggered"
+              x-data="{ expanded: false }"
+            >
+              <div
+                class="flex flex-row items-center justify-between cursor-pointer"
+                x-on:click="expanded = !expanded"
+              >
+                <div class="flex items-center gap-2">
+                  <svg
+                    class="2xl:fill-primary-dark 2xl:size-4 cc-svg"
+                    viewBox="0 0 24 28"
+                  >
+                    <path
+                      d="M14 21.5v-3c0-0.281-0.219-0.5-0.5-0.5h-3c-0.281 0-0.5 0.219-0.5 0.5v3c0 0.281 0.219 0.5 0.5 0.5h3c0.281 0 0.5-0.219 0.5-0.5zM18 11c0-2.859-3-5-5.688-5-2.547 0-4.453 1.094-5.797 3.328-0.141 0.219-0.078 0.5 0.125 0.656l2.063 1.563c0.078 0.063 0.187 0.094 0.297 0.094 0.141 0 0.297-0.063 0.391-0.187 0.734-0.938 1.047-1.219 1.344-1.437 0.266-0.187 0.781-0.375 1.344-0.375 1 0 1.922 0.641 1.922 1.328 0 0.812-0.422 1.219-1.375 1.656-1.109 0.5-2.625 1.797-2.625 3.313v0.562c0 0.281 0.219 0.5 0.5 0.5h3c0.281 0 0.5-0.219 0.5-0.5v0c0-0.359 0.453-1.125 1.188-1.547 1.188-0.672 2.812-1.578 2.812-3.953zM24 14c0 6.625-5.375 12-12 12s-12-5.375-12-12 5.375-12 12-12 12 5.375 12 12z"
+                    ></path>
+                  </svg>
+
+                  <h1 class="font-semibold text-zinc-950/90">
+                    How does going solar help the environment?
+                  </h1>
+                </div>
+
+                <svg
+                  class="cc-svg"
+                  viewBox="0 0 16 28"
+                >
+                  <path
+                    d="M16 11c0 0.266-0.109 0.516-0.297 0.703l-7 7c-0.187 0.187-0.438 0.297-0.703 0.297s-0.516-0.109-0.703-0.297l-7-7c-0.187-0.187-0.297-0.438-0.297-0.703 0-0.547 0.453-1 1-1h14c0.547 0 1 0.453 1 1z"
+                  ></path>
+                </svg>
+              </div>
+
+              <div
+                x-show="expanded"
+                x-collapse=""
+                style="display: none; height: 0px; overflow: hidden"
+                hidden=""
+              >
+                <p class="text-zinc-500">
+                  Solar panels help the environment because solar power is a
+                  renewable resource that is generated in the same place it’s
+                  being consumed. No need for a power station to burn fossil
+                  fuels and send electricity down power lines.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="cc-query-item">
+            <div
+              class="flex flex-col gap-2 py-4 fadeInStaggered"
+              x-data="{ expanded: false }"
+            >
+              <div
+                class="flex flex-row items-center justify-between cursor-pointer"
+                x-on:click="expanded = !expanded"
+              >
+                <div class="flex items-center gap-2">
+                  <svg
+                    class="2xl:fill-primary-dark 2xl:size-4 cc-svg"
+                    viewBox="0 0 24 28"
+                  >
+                    <path
+                      d="M14 21.5v-3c0-0.281-0.219-0.5-0.5-0.5h-3c-0.281 0-0.5 0.219-0.5 0.5v3c0 0.281 0.219 0.5 0.5 0.5h3c0.281 0 0.5-0.219 0.5-0.5zM18 11c0-2.859-3-5-5.688-5-2.547 0-4.453 1.094-5.797 3.328-0.141 0.219-0.078 0.5 0.125 0.656l2.063 1.563c0.078 0.063 0.187 0.094 0.297 0.094 0.141 0 0.297-0.063 0.391-0.187 0.734-0.938 1.047-1.219 1.344-1.437 0.266-0.187 0.781-0.375 1.344-0.375 1 0 1.922 0.641 1.922 1.328 0 0.812-0.422 1.219-1.375 1.656-1.109 0.5-2.625 1.797-2.625 3.313v0.562c0 0.281 0.219 0.5 0.5 0.5h3c0.281 0 0.5-0.219 0.5-0.5v0c0-0.359 0.453-1.125 1.188-1.547 1.188-0.672 2.812-1.578 2.812-3.953zM24 14c0 6.625-5.375 12-12 12s-12-5.375-12-12 5.375-12 12-12 12 5.375 12 12z"
+                    ></path>
+                  </svg>
+
+                  <h1 class="font-semibold text-zinc-950/90">
+                    What is a feed-in tariff and is it the same as Net Metering?
+                  </h1>
+                </div>
+
+                <svg
+                  class="cc-svg"
+                  viewBox="0 0 16 28"
+                >
+                  <path
+                    d="M16 11c0 0.266-0.109 0.516-0.297 0.703l-7 7c-0.187 0.187-0.438 0.297-0.703 0.297s-0.516-0.109-0.703-0.297l-7-7c-0.187-0.187-0.297-0.438-0.297-0.703 0-0.547 0.453-1 1-1h14c0.547 0 1 0.453 1 1z"
+                  ></path>
+                </svg>
+              </div>
+
+              <div
+                x-show="expanded"
+                x-collapse=""
+                style="display: none; height: 0px; overflow: hidden"
+                hidden=""
+              >
+                <p class="text-zinc-500">
+                  When your solar panels generate more electricity than you’re
+                  using, the overflow will either go into your battery or, if
+                  your battery is full or you don’t have a battery, will be fed
+                  into the main grid. Your energy retailer will pay you for this
+                  additional electricity, and this payment is called the feed-in
+                  tariff, also known as net metering.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="cc-query-item">
+            <div
+              class="flex flex-col gap-2 py-4 fadeInStaggered"
+              x-data="{ expanded: false }"
+            >
+              <div
+                class="flex flex-row items-center justify-between cursor-pointer"
+                x-on:click="expanded = !expanded"
+              >
+                <div class="flex items-center gap-2">
+                  <svg
+                    class="2xl:fill-primary-dark 2xl:size-4 cc-svg"
+                    viewBox="0 0 24 28"
+                  >
+                    <path
+                      d="M14 21.5v-3c0-0.281-0.219-0.5-0.5-0.5h-3c-0.281 0-0.5 0.219-0.5 0.5v3c0 0.281 0.219 0.5 0.5 0.5h3c0.281 0 0.5-0.219 0.5-0.5zM18 11c0-2.859-3-5-5.688-5-2.547 0-4.453 1.094-5.797 3.328-0.141 0.219-0.078 0.5 0.125 0.656l2.063 1.563c0.078 0.063 0.187 0.094 0.297 0.094 0.141 0 0.297-0.063 0.391-0.187 0.734-0.938 1.047-1.219 1.344-1.437 0.266-0.187 0.781-0.375 1.344-0.375 1 0 1.922 0.641 1.922 1.328 0 0.812-0.422 1.219-1.375 1.656-1.109 0.5-2.625 1.797-2.625 3.313v0.562c0 0.281 0.219 0.5 0.5 0.5h3c0.281 0 0.5-0.219 0.5-0.5v0c0-0.359 0.453-1.125 1.188-1.547 1.188-0.672 2.812-1.578 2.812-3.953zM24 14c0 6.625-5.375 12-12 12s-12-5.375-12-12 5.375-12 12-12 12 5.375 12 12z"
+                    ></path>
+                  </svg>
+
+                  <h1 class="font-semibold text-zinc-950/90">
+                    Will solar panels increase the value of my home?
+                  </h1>
+                </div>
+
+                <svg
+                  class="cc-svg"
+                  viewBox="0 0 16 28"
+                >
+                  <path
+                    d="M16 11c0 0.266-0.109 0.516-0.297 0.703l-7 7c-0.187 0.187-0.438 0.297-0.703 0.297s-0.516-0.109-0.703-0.297l-7-7c-0.187-0.187-0.297-0.438-0.297-0.703 0-0.547 0.453-1 1-1h14c0.547 0 1 0.453 1 1z"
+                  ></path>
+                </svg>
+              </div>
+
+              <div
+                x-show="expanded"
+                x-collapse=""
+                style="display: none; height: 0px; overflow: hidden"
+                hidden=""
+              >
+                <p class="text-zinc-500">
+                  Potentially, depending on how long ago you installed solar and
+                  how you paid for it. It might be difficult to recoup all the
+                  costs of solar when selling your house within 7 years of
+                  installinging it. Many buyers look for properties that already
+                  have solar power installed, because they can pay lower
+                  electricity bills immediately without installing the panels
+                  themselves. The remainder of the loan will however need to be
+                  paid off when you sell the home.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="cc-query-item">
+            <div
+              class="flex flex-col gap-2 py-4 fadeInStaggered"
+              x-data="{ expanded: false }"
+            >
+              <div
+                class="flex flex-row items-center justify-between cursor-pointer"
+                x-on:click="expanded = !expanded"
+              >
+                <div class="flex items-center gap-2">
+                  <svg
+                    class="2xl:fill-primary-dark 2xl:size-4 cc-svg"
+                    viewBox="0 0 24 28"
+                  >
+                    <path
+                      d="M14 21.5v-3c0-0.281-0.219-0.5-0.5-0.5h-3c-0.281 0-0.5 0.219-0.5 0.5v3c0 0.281 0.219 0.5 0.5 0.5h3c0.281 0 0.5-0.219 0.5-0.5zM18 11c0-2.859-3-5-5.688-5-2.547 0-4.453 1.094-5.797 3.328-0.141 0.219-0.078 0.5 0.125 0.656l2.063 1.563c0.078 0.063 0.187 0.094 0.297 0.094 0.141 0 0.297-0.063 0.391-0.187 0.734-0.938 1.047-1.219 1.344-1.437 0.266-0.187 0.781-0.375 1.344-0.375 1 0 1.922 0.641 1.922 1.328 0 0.812-0.422 1.219-1.375 1.656-1.109 0.5-2.625 1.797-2.625 3.313v0.562c0 0.281 0.219 0.5 0.5 0.5h3c0.281 0 0.5-0.219 0.5-0.5v0c0-0.359 0.453-1.125 1.188-1.547 1.188-0.672 2.812-1.578 2.812-3.953zM24 14c0 6.625-5.375 12-12 12s-12-5.375-12-12 5.375-12 12-12 12 5.375 12 12z"
+                    ></path>
+                  </svg>
+
+                  <h1 class="font-semibold text-zinc-950/90">
+                    Do solar panels need cleaning?
+                  </h1>
+                </div>
+
+                <svg
+                  class="cc-svg"
+                  viewBox="0 0 16 28"
+                >
+                  <path
+                    d="M16 11c0 0.266-0.109 0.516-0.297 0.703l-7 7c-0.187 0.187-0.438 0.297-0.703 0.297s-0.516-0.109-0.703-0.297l-7-7c-0.187-0.187-0.297-0.438-0.297-0.703 0-0.547 0.453-1 1-1h14c0.547 0 1 0.453 1 1z"
+                  ></path>
+                </svg>
+              </div>
+
+              <div
+                x-show="expanded"
+                x-collapse=""
+                style="display: none; height: 0px; overflow: hidden"
+                hidden=""
+              >
+                <p class="text-zinc-500">
+                  Most quality solar panels are designed to be self cleaning in
+                  the rain. If you don’t have much rain for a period of time
+                  however, they can collect dust, debris and bird droppings that
+                  will reduce the amount of electricity produced. So it’s a good
+                  idea to regularly check your panels and clean them with a hose
+                  or cloth, as necessary.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="cc-query-item">
+            <div
+              class="flex flex-col gap-2 py-4 fadeInStaggered"
+              x-data="{ expanded: false }"
+            >
+              <div
+                class="flex flex-row items-center justify-between cursor-pointer"
+                x-on:click="expanded = !expanded"
+              >
+                <div class="flex items-center gap-2">
+                  <svg
+                    class="2xl:fill-primary-dark 2xl:size-4 cc-svg"
+                    viewBox="0 0 24 28"
+                  >
+                    <path
+                      d="M14 21.5v-3c0-0.281-0.219-0.5-0.5-0.5h-3c-0.281 0-0.5 0.219-0.5 0.5v3c0 0.281 0.219 0.5 0.5 0.5h3c0.281 0 0.5-0.219 0.5-0.5zM18 11c0-2.859-3-5-5.688-5-2.547 0-4.453 1.094-5.797 3.328-0.141 0.219-0.078 0.5 0.125 0.656l2.063 1.563c0.078 0.063 0.187 0.094 0.297 0.094 0.141 0 0.297-0.063 0.391-0.187 0.734-0.938 1.047-1.219 1.344-1.437 0.266-0.187 0.781-0.375 1.344-0.375 1 0 1.922 0.641 1.922 1.328 0 0.812-0.422 1.219-1.375 1.656-1.109 0.5-2.625 1.797-2.625 3.313v0.562c0 0.281 0.219 0.5 0.5 0.5h3c0.281 0 0.5-0.219 0.5-0.5v0c0-0.359 0.453-1.125 1.188-1.547 1.188-0.672 2.812-1.578 2.812-3.953zM24 14c0 6.625-5.375 12-12 12s-12-5.375-12-12 5.375-12 12-12 12 5.375 12 12z"
+                    ></path>
+                  </svg>
+
+                  <h1 class="font-semibold text-zinc-950/90">
+                    How much money can I expect to save on my bills?
+                  </h1>
+                </div>
+
+                <svg
+                  class="cc-svg"
+                  viewBox="0 0 16 28"
+                >
+                  <path
+                    d="M16 11c0 0.266-0.109 0.516-0.297 0.703l-7 7c-0.187 0.187-0.438 0.297-0.703 0.297s-0.516-0.109-0.703-0.297l-7-7c-0.187-0.187-0.297-0.438-0.297-0.703 0-0.547 0.453-1 1-1h14c0.547 0 1 0.453 1 1z"
+                  ></path>
+                </svg>
+              </div>
+
+              <div
+                x-show="expanded"
+                x-collapse=""
+                style="display: none; height: 0px; overflow: hidden"
+                hidden=""
+              >
+                <p class="text-zinc-500">
+                  This depends on a number of factors that include how much
+                  electricity your system produces, its efficiency, how much
+                  electricity you use, where you live, and the rate you are
+                  charged by your electricity provider.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="cc-query-item">
+            <div
+              class="flex flex-col gap-2 py-4 fadeInStaggered"
+              x-data="{ expanded: false }"
+            >
+              <div
+                class="flex flex-row items-center justify-between cursor-pointer"
+                x-on:click="expanded = !expanded"
+              >
+                <div class="flex items-center gap-2">
+                  <svg
+                    class="2xl:fill-primary-dark 2xl:size-4 cc-svg"
+                    viewBox="0 0 24 28"
+                  >
+                    <path
+                      d="M14 21.5v-3c0-0.281-0.219-0.5-0.5-0.5h-3c-0.281 0-0.5 0.219-0.5 0.5v3c0 0.281 0.219 0.5 0.5 0.5h3c0.281 0 0.5-0.219 0.5-0.5zM18 11c0-2.859-3-5-5.688-5-2.547 0-4.453 1.094-5.797 3.328-0.141 0.219-0.078 0.5 0.125 0.656l2.063 1.563c0.078 0.063 0.187 0.094 0.297 0.094 0.141 0 0.297-0.063 0.391-0.187 0.734-0.938 1.047-1.219 1.344-1.437 0.266-0.187 0.781-0.375 1.344-0.375 1 0 1.922 0.641 1.922 1.328 0 0.812-0.422 1.219-1.375 1.656-1.109 0.5-2.625 1.797-2.625 3.313v0.562c0 0.281 0.219 0.5 0.5 0.5h3c0.281 0 0.5-0.219 0.5-0.5v0c0-0.359 0.453-1.125 1.188-1.547 1.188-0.672 2.812-1.578 2.812-3.953zM24 14c0 6.625-5.375 12-12 12s-12-5.375-12-12 5.375-12 12-12 12 5.375 12 12z"
+                    ></path>
+                  </svg>
+
+                  <h1 class="font-semibold text-zinc-950/90">
+                    Is going solar worth it?
+                  </h1>
+                </div>
+
+                <svg
+                  class="cc-svg"
+                  viewBox="0 0 16 28"
+                >
+                  <path
+                    d="M16 11c0 0.266-0.109 0.516-0.297 0.703l-7 7c-0.187 0.187-0.438 0.297-0.703 0.297s-0.516-0.109-0.703-0.297l-7-7c-0.187-0.187-0.297-0.438-0.297-0.703 0-0.547 0.453-1 1-1h14c0.547 0 1 0.453 1 1z"
+                  ></path>
+                </svg>
+              </div>
+
+              <div
+                x-show="expanded"
+                x-collapse=""
+                style="display: none; height: 0px; overflow: hidden"
+                hidden=""
+              >
+                <p class="text-zinc-500">
+                  Most homeowners choose to go solar for the electricity bill
+                  savings. While this might be the initial attraction of going
+                  solar, many do not realize solar also allows you to control
+                  your power bill and increase your property value.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="cc-query-item">
+            <div
+              class="flex flex-col gap-2 py-4 fadeInStaggered"
+              x-data="{ expanded: false }"
+            >
+              <div
+                class="flex flex-row items-center justify-between cursor-pointer"
+                x-on:click="expanded = !expanded"
+              >
+                <div class="flex items-center gap-2">
+                  <svg
+                    class="2xl:fill-primary-dark 2xl:size-4 cc-svg"
+                    viewBox="0 0 24 28"
+                  >
+                    <path
+                      d="M14 21.5v-3c0-0.281-0.219-0.5-0.5-0.5h-3c-0.281 0-0.5 0.219-0.5 0.5v3c0 0.281 0.219 0.5 0.5 0.5h3c0.281 0 0.5-0.219 0.5-0.5zM18 11c0-2.859-3-5-5.688-5-2.547 0-4.453 1.094-5.797 3.328-0.141 0.219-0.078 0.5 0.125 0.656l2.063 1.563c0.078 0.063 0.187 0.094 0.297 0.094 0.141 0 0.297-0.063 0.391-0.187 0.734-0.938 1.047-1.219 1.344-1.437 0.266-0.187 0.781-0.375 1.344-0.375 1 0 1.922 0.641 1.922 1.328 0 0.812-0.422 1.219-1.375 1.656-1.109 0.5-2.625 1.797-2.625 3.313v0.562c0 0.281 0.219 0.5 0.5 0.5h3c0.281 0 0.5-0.219 0.5-0.5v0c0-0.359 0.453-1.125 1.188-1.547 1.188-0.672 2.812-1.578 2.812-3.953zM24 14c0 6.625-5.375 12-12 12s-12-5.375-12-12 5.375-12 12-12 12 5.375 12 12z"
+                    ></path>
+                  </svg>
+
+                  <h1 class="font-semibold text-zinc-950/90">
+                    Does roof orientation matter?
+                  </h1>
+                </div>
+
+                <svg
+                  class="cc-svg"
+                  viewBox="0 0 16 28"
+                >
+                  <path
+                    d="M16 11c0 0.266-0.109 0.516-0.297 0.703l-7 7c-0.187 0.187-0.438 0.297-0.703 0.297s-0.516-0.109-0.703-0.297l-7-7c-0.187-0.187-0.297-0.438-0.297-0.703 0-0.547 0.453-1 1-1h14c0.547 0 1 0.453 1 1z"
+                  ></path>
+                </svg>
+              </div>
+
+              <div
+                x-show="expanded"
+                x-collapse=""
+                style="display: none; height: 0px; overflow: hidden"
+                hidden=""
+              >
+                <p class="text-zinc-500">
+                  Yes, the orientation of your solar panels will make a
+                  difference to the amount of electricity produced. A northerly
+                  orientation is best, but your solar installer will look at the
+                  orientation of your roof and place the panels in the best
+                  locations to maximise the production of electricity on your
+                  property.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="cc-query-item">
+            <div
+              class="flex flex-col gap-2 py-4 fadeInStaggered"
+              x-data="{ expanded: false }"
+            >
+              <div
+                class="flex flex-row items-center justify-between cursor-pointer"
+                x-on:click="expanded = !expanded"
+              >
+                <div class="flex items-center gap-2">
+                  <svg
+                    class="2xl:fill-primary-dark 2xl:size-4 cc-svg"
+                    viewBox="0 0 24 28"
+                  >
+                    <path
+                      d="M14 21.5v-3c0-0.281-0.219-0.5-0.5-0.5h-3c-0.281 0-0.5 0.219-0.5 0.5v3c0 0.281 0.219 0.5 0.5 0.5h3c0.281 0 0.5-0.219 0.5-0.5zM18 11c0-2.859-3-5-5.688-5-2.547 0-4.453 1.094-5.797 3.328-0.141 0.219-0.078 0.5 0.125 0.656l2.063 1.563c0.078 0.063 0.187 0.094 0.297 0.094 0.141 0 0.297-0.063 0.391-0.187 0.734-0.938 1.047-1.219 1.344-1.437 0.266-0.187 0.781-0.375 1.344-0.375 1 0 1.922 0.641 1.922 1.328 0 0.812-0.422 1.219-1.375 1.656-1.109 0.5-2.625 1.797-2.625 3.313v0.562c0 0.281 0.219 0.5 0.5 0.5h3c0.281 0 0.5-0.219 0.5-0.5v0c0-0.359 0.453-1.125 1.188-1.547 1.188-0.672 2.812-1.578 2.812-3.953zM24 14c0 6.625-5.375 12-12 12s-12-5.375-12-12 5.375-12 12-12 12 5.375 12 12z"
+                    ></path>
+                  </svg>
+
+                  <h1 class="font-semibold text-zinc-950/90">
+                    Will solar panels generate electricity on cloudy or rainy
+                    days?
+                  </h1>
+                </div>
+
+                <svg
+                  class="cc-svg"
+                  viewBox="0 0 16 28"
+                >
+                  <path
+                    d="M16 11c0 0.266-0.109 0.516-0.297 0.703l-7 7c-0.187 0.187-0.438 0.297-0.703 0.297s-0.516-0.109-0.703-0.297l-7-7c-0.187-0.187-0.297-0.438-0.297-0.703 0-0.547 0.453-1 1-1h14c0.547 0 1 0.453 1 1z"
+                  ></path>
+                </svg>
+              </div>
+
+              <div
+                x-show="expanded"
+                x-collapse=""
+                style="display: none; height: 0px; overflow: hidden"
+                hidden=""
+              >
+                <p class="text-zinc-500">
+                  Solar panels will stop generating electricity at night but
+                  will still generate electricity on cloudy or rainy days, just
+                  not as much as on sunny days. To create electricity, your
+                  solar panels need direct sunlight, so whilst it doesn’t need
+                  to be a bright sunny day all the time, the more sun that hits
+                  your panels, the more electricity is produced.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div
+            class="cc-query-item"
+            data-lastpost="1"
+          >
+            <div
+              class="flex flex-col gap-2 py-4 fadeInStaggered"
+              x-data="{ expanded: false }"
+            >
+              <div
+                class="flex flex-row items-center justify-between cursor-pointer"
+                x-on:click="expanded = !expanded"
+              >
+                <div class="flex items-center gap-2">
+                  <svg
+                    class="2xl:fill-primary-dark 2xl:size-4 cc-svg"
+                    viewBox="0 0 24 28"
+                  >
+                    <path
+                      d="M14 21.5v-3c0-0.281-0.219-0.5-0.5-0.5h-3c-0.281 0-0.5 0.219-0.5 0.5v3c0 0.281 0.219 0.5 0.5 0.5h3c0.281 0 0.5-0.219 0.5-0.5zM18 11c0-2.859-3-5-5.688-5-2.547 0-4.453 1.094-5.797 3.328-0.141 0.219-0.078 0.5 0.125 0.656l2.063 1.563c0.078 0.063 0.187 0.094 0.297 0.094 0.141 0 0.297-0.063 0.391-0.187 0.734-0.938 1.047-1.219 1.344-1.437 0.266-0.187 0.781-0.375 1.344-0.375 1 0 1.922 0.641 1.922 1.328 0 0.812-0.422 1.219-1.375 1.656-1.109 0.5-2.625 1.797-2.625 3.313v0.562c0 0.281 0.219 0.5 0.5 0.5h3c0.281 0 0.5-0.219 0.5-0.5v0c0-0.359 0.453-1.125 1.188-1.547 1.188-0.672 2.812-1.578 2.812-3.953zM24 14c0 6.625-5.375 12-12 12s-12-5.375-12-12 5.375-12 12-12 12 5.375 12 12z"
+                    ></path>
+                  </svg>
+
+                  <h1 class="font-semibold text-zinc-950/90">
+                    How does solar power work?
+                  </h1>
+                </div>
+
+                <svg
+                  class="cc-svg"
+                  viewBox="0 0 16 28"
+                >
+                  <path
+                    d="M16 11c0 0.266-0.109 0.516-0.297 0.703l-7 7c-0.187 0.187-0.438 0.297-0.703 0.297s-0.516-0.109-0.703-0.297l-7-7c-0.187-0.187-0.297-0.438-0.297-0.703 0-0.547 0.453-1 1-1h14c0.547 0 1 0.453 1 1z"
+                  ></path>
+                </svg>
+              </div>
+
+              <div
+                x-show="expanded"
+                x-collapse=""
+                style="display: none; height: 0px; overflow: hidden"
+                hidden=""
+              >
+                <p class="text-zinc-500">
+                  When the sun’s rays hit the solar panels on your roof, it is
+                  turned into DC current electricity. The problem is that your
+                  home uses AC current electricity, which is why you need to
+                  install an inverter. The inverter converts the DC current to
+                  AC current, which can then be used in your home with the
+                  excess fed into the grid (or stored in your battery, if you
+                  have one).
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div
+        id="query-c0cc7d4"
+        class="flex w-full max-w-2xl mx-auto"
+        x-show.transition="active == 'subscription'"
+        data-query_id="331"
+        style="display: none"
+      >
+        <div
+          id="query-template-cf30265"
+          class="flex flex-col w-full px-4 py-8 divide-y-2 shadow-inner query-template-c6d79ee divide-2 rounded-3xl divide-zinc-100/30 backdrop-blur-lg breathing-sun-opacity-20 sun-breathing-opacity-20"
+          cc-query-template=""
+        >
+          <div class="cc-query-item">
+            <div
+              class="flex flex-col gap-2 py-4"
+              x-data="{ expanded: false }"
+              @faq="expanded = false"
+            >
+              <div
+                class="flex flex-row items-center justify-between cursor-pointer"
+                @click="expanded = !expanded"
+              >
+                <div class="flex items-center gap-1">
+                  <svg
+                    class="2xl:fill-primary-dark 2xl:size-4 cc-svg"
+                    viewBox="0 0 24 28"
+                  >
+                    <path
+                      d="M14 21.5v-3c0-0.281-0.219-0.5-0.5-0.5h-3c-0.281 0-0.5 0.219-0.5 0.5v3c0 0.281 0.219 0.5 0.5 0.5h3c0.281 0 0.5-0.219 0.5-0.5zM18 11c0-2.859-3-5-5.688-5-2.547 0-4.453 1.094-5.797 3.328-0.141 0.219-0.078 0.5 0.125 0.656l2.063 1.563c0.078 0.063 0.187 0.094 0.297 0.094 0.141 0 0.297-0.063 0.391-0.187 0.734-0.938 1.047-1.219 1.344-1.437 0.266-0.187 0.781-0.375 1.344-0.375 1 0 1.922 0.641 1.922 1.328 0 0.812-0.422 1.219-1.375 1.656-1.109 0.5-2.625 1.797-2.625 3.313v0.562c0 0.281 0.219 0.5 0.5 0.5h3c0.281 0 0.5-0.219 0.5-0.5v0c0-0.359 0.453-1.125 1.188-1.547 1.188-0.672 2.812-1.578 2.812-3.953zM24 14c0 6.625-5.375 12-12 12s-12-5.375-12-12 5.375-12 12-12 12 5.375 12 12z"
+                    ></path>
+                  </svg>
+
+                  <h1 class="font-semibold text-zinc-950/90">
+                    Who do I call if there’s a problem?
+                  </h1>
+                </div>
+
+                <svg
+                  class="cc-svg"
+                  viewBox="0 0 16 28"
+                >
+                  <path
+                    d="M16 11c0 0.266-0.109 0.516-0.297 0.703l-7 7c-0.187 0.187-0.438 0.297-0.703 0.297s-0.516-0.109-0.703-0.297l-7-7c-0.187-0.187-0.297-0.438-0.297-0.703 0-0.547 0.453-1 1-1h14c0.547 0 1 0.453 1 1z"
+                  ></path>
+                </svg>
+              </div>
+
+              <div
+                x-show="expanded"
+                x-collapse=""
+                style="display: none; height: 0px; overflow: hidden"
+                hidden=""
+              >
+                <p class="text-zinc-500">
+                  With our remote monitoring, we will call you before you call
+                  us with any problem. You will also have our mobile app with
+                  chat, video and rapid response support.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="cc-query-item">
+            <div
+              class="flex flex-col gap-2 py-4"
+              x-data="{ expanded: false }"
+              @faq="expanded = false"
+            >
+              <div
+                class="flex flex-row items-center justify-between cursor-pointer"
+                @click="expanded = !expanded"
+              >
+                <div class="flex items-center gap-1">
+                  <svg
+                    class="2xl:fill-primary-dark 2xl:size-4 cc-svg"
+                    viewBox="0 0 24 28"
+                  >
+                    <path
+                      d="M14 21.5v-3c0-0.281-0.219-0.5-0.5-0.5h-3c-0.281 0-0.5 0.219-0.5 0.5v3c0 0.281 0.219 0.5 0.5 0.5h3c0.281 0 0.5-0.219 0.5-0.5zM18 11c0-2.859-3-5-5.688-5-2.547 0-4.453 1.094-5.797 3.328-0.141 0.219-0.078 0.5 0.125 0.656l2.063 1.563c0.078 0.063 0.187 0.094 0.297 0.094 0.141 0 0.297-0.063 0.391-0.187 0.734-0.938 1.047-1.219 1.344-1.437 0.266-0.187 0.781-0.375 1.344-0.375 1 0 1.922 0.641 1.922 1.328 0 0.812-0.422 1.219-1.375 1.656-1.109 0.5-2.625 1.797-2.625 3.313v0.562c0 0.281 0.219 0.5 0.5 0.5h3c0.281 0 0.5-0.219 0.5-0.5v0c0-0.359 0.453-1.125 1.188-1.547 1.188-0.672 2.812-1.578 2.812-3.953zM24 14c0 6.625-5.375 12-12 12s-12-5.375-12-12 5.375-12 12-12 12 5.375 12 12z"
+                    ></path>
+                  </svg>
+
+                  <h1 class="font-semibold text-zinc-950/90">
+                    Can I choose my own equipment?
+                  </h1>
+                </div>
+
+                <svg
+                  class="cc-svg"
+                  viewBox="0 0 16 28"
+                >
+                  <path
+                    d="M16 11c0 0.266-0.109 0.516-0.297 0.703l-7 7c-0.187 0.187-0.438 0.297-0.703 0.297s-0.516-0.109-0.703-0.297l-7-7c-0.187-0.187-0.297-0.438-0.297-0.703 0-0.547 0.453-1 1-1h14c0.547 0 1 0.453 1 1z"
+                  ></path>
+                </svg>
+              </div>
+
+              <div
+                x-show="expanded"
+                x-collapse=""
+                style="display: none; height: 0px; overflow: hidden"
+                hidden=""
+              >
+                <p class="text-zinc-500">
+                  We only recommend the best equipment and enjoy buying power
+                  for these brands, but we are brand agnostic as long as the
+                  warranties and production are up to our high standards.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="cc-query-item">
+            <div
+              class="flex flex-col gap-2 py-4"
+              x-data="{ expanded: false }"
+              @faq="expanded = false"
+            >
+              <div
+                class="flex flex-row items-center justify-between cursor-pointer"
+                @click="expanded = !expanded"
+              >
+                <div class="flex items-center gap-1">
+                  <svg
+                    class="2xl:fill-primary-dark 2xl:size-4 cc-svg"
+                    viewBox="0 0 24 28"
+                  >
+                    <path
+                      d="M14 21.5v-3c0-0.281-0.219-0.5-0.5-0.5h-3c-0.281 0-0.5 0.219-0.5 0.5v3c0 0.281 0.219 0.5 0.5 0.5h3c0.281 0 0.5-0.219 0.5-0.5zM18 11c0-2.859-3-5-5.688-5-2.547 0-4.453 1.094-5.797 3.328-0.141 0.219-0.078 0.5 0.125 0.656l2.063 1.563c0.078 0.063 0.187 0.094 0.297 0.094 0.141 0 0.297-0.063 0.391-0.187 0.734-0.938 1.047-1.219 1.344-1.437 0.266-0.187 0.781-0.375 1.344-0.375 1 0 1.922 0.641 1.922 1.328 0 0.812-0.422 1.219-1.375 1.656-1.109 0.5-2.625 1.797-2.625 3.313v0.562c0 0.281 0.219 0.5 0.5 0.5h3c0.281 0 0.5-0.219 0.5-0.5v0c0-0.359 0.453-1.125 1.188-1.547 1.188-0.672 2.812-1.578 2.812-3.953zM24 14c0 6.625-5.375 12-12 12s-12-5.375-12-12 5.375-12 12-12 12 5.375 12 12z"
+                    ></path>
+                  </svg>
+
+                  <h1 class="font-semibold text-zinc-950/90">
+                    Who does the installation?
+                  </h1>
+                </div>
+
+                <svg
+                  class="cc-svg"
+                  viewBox="0 0 16 28"
+                >
+                  <path
+                    d="M16 11c0 0.266-0.109 0.516-0.297 0.703l-7 7c-0.187 0.187-0.438 0.297-0.703 0.297s-0.516-0.109-0.703-0.297l-7-7c-0.187-0.187-0.297-0.438-0.297-0.703 0-0.547 0.453-1 1-1h14c0.547 0 1 0.453 1 1z"
+                  ></path>
+                </svg>
+              </div>
+
+              <div
+                x-show="expanded"
+                x-collapse=""
+                style="display: none; height: 0px; overflow: hidden"
+                hidden=""
+              >
+                <p class="text-zinc-500">
+                  We have a network of community based installers, in business
+                  for 10+ years, 5 Star rated, fully certified and insured.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="cc-query-item">
+            <div
+              class="flex flex-col gap-2 py-4"
+              x-data="{ expanded: false }"
+              @faq="expanded = false"
+            >
+              <div
+                class="flex flex-row items-center justify-between cursor-pointer"
+                @click="expanded = !expanded"
+              >
+                <div class="flex items-center gap-1">
+                  <svg
+                    class="2xl:fill-primary-dark 2xl:size-4 cc-svg"
+                    viewBox="0 0 24 28"
+                  >
+                    <path
+                      d="M14 21.5v-3c0-0.281-0.219-0.5-0.5-0.5h-3c-0.281 0-0.5 0.219-0.5 0.5v3c0 0.281 0.219 0.5 0.5 0.5h3c0.281 0 0.5-0.219 0.5-0.5zM18 11c0-2.859-3-5-5.688-5-2.547 0-4.453 1.094-5.797 3.328-0.141 0.219-0.078 0.5 0.125 0.656l2.063 1.563c0.078 0.063 0.187 0.094 0.297 0.094 0.141 0 0.297-0.063 0.391-0.187 0.734-0.938 1.047-1.219 1.344-1.437 0.266-0.187 0.781-0.375 1.344-0.375 1 0 1.922 0.641 1.922 1.328 0 0.812-0.422 1.219-1.375 1.656-1.109 0.5-2.625 1.797-2.625 3.313v0.562c0 0.281 0.219 0.5 0.5 0.5h3c0.281 0 0.5-0.219 0.5-0.5v0c0-0.359 0.453-1.125 1.188-1.547 1.188-0.672 2.812-1.578 2.812-3.953zM24 14c0 6.625-5.375 12-12 12s-12-5.375-12-12 5.375-12 12-12 12 5.375 12 12z"
+                    ></path>
+                  </svg>
+
+                  <h1 class="font-semibold text-zinc-950/90">
+                    Is it cheaper in the long run?
+                  </h1>
+                </div>
+
+                <svg
+                  class="cc-svg"
+                  viewBox="0 0 16 28"
+                >
+                  <path
+                    d="M16 11c0 0.266-0.109 0.516-0.297 0.703l-7 7c-0.187 0.187-0.438 0.297-0.703 0.297s-0.516-0.109-0.703-0.297l-7-7c-0.187-0.187-0.297-0.438-0.297-0.703 0-0.547 0.453-1 1-1h14c0.547 0 1 0.453 1 1z"
+                  ></path>
+                </svg>
+              </div>
+
+              <div
+                x-show="expanded"
+                x-collapse=""
+                style="display: none; height: 0px; overflow: hidden"
+                hidden=""
+              >
+                <p class="text-zinc-500">
+                  Savings are immediate, prices are locked in, production is
+                  guaranteed and warranties extend for 25yrs, regardless of how
+                  much electricity prices increase. You also have financial
+                  freedom, unburdened by a loan or lease and will have no hassle
+                  selling your house.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="cc-query-item">
+            <div
+              class="flex flex-col gap-2 py-4"
+              x-data="{ expanded: false }"
+              @faq="expanded = false"
+            >
+              <div
+                class="flex flex-row items-center justify-between cursor-pointer"
+                @click="expanded = !expanded"
+              >
+                <div class="flex items-center gap-1">
+                  <svg
+                    class="2xl:fill-primary-dark 2xl:size-4 cc-svg"
+                    viewBox="0 0 24 28"
+                  >
+                    <path
+                      d="M14 21.5v-3c0-0.281-0.219-0.5-0.5-0.5h-3c-0.281 0-0.5 0.219-0.5 0.5v3c0 0.281 0.219 0.5 0.5 0.5h3c0.281 0 0.5-0.219 0.5-0.5zM18 11c0-2.859-3-5-5.688-5-2.547 0-4.453 1.094-5.797 3.328-0.141 0.219-0.078 0.5 0.125 0.656l2.063 1.563c0.078 0.063 0.187 0.094 0.297 0.094 0.141 0 0.297-0.063 0.391-0.187 0.734-0.938 1.047-1.219 1.344-1.437 0.266-0.187 0.781-0.375 1.344-0.375 1 0 1.922 0.641 1.922 1.328 0 0.812-0.422 1.219-1.375 1.656-1.109 0.5-2.625 1.797-2.625 3.313v0.562c0 0.281 0.219 0.5 0.5 0.5h3c0.281 0 0.5-0.219 0.5-0.5v0c0-0.359 0.453-1.125 1.188-1.547 1.188-0.672 2.812-1.578 2.812-3.953zM24 14c0 6.625-5.375 12-12 12s-12-5.375-12-12 5.375-12 12-12 12 5.375 12 12z"
+                    ></path>
+                  </svg>
+
+                  <h1 class="font-semibold text-zinc-950/90">
+                    Can I get a tax credit?
+                  </h1>
+                </div>
+
+                <svg
+                  class="cc-svg"
+                  viewBox="0 0 16 28"
+                >
+                  <path
+                    d="M16 11c0 0.266-0.109 0.516-0.297 0.703l-7 7c-0.187 0.187-0.438 0.297-0.703 0.297s-0.516-0.109-0.703-0.297l-7-7c-0.187-0.187-0.297-0.438-0.297-0.703 0-0.547 0.453-1 1-1h14c0.547 0 1 0.453 1 1z"
+                  ></path>
+                </svg>
+              </div>
+
+              <div
+                x-show="expanded"
+                x-collapse=""
+                style="display: none; height: 0px; overflow: hidden"
+                hidden=""
+              >
+                <p class="text-zinc-500">
+                  Some states offer their own tax credits (more info
+                  <a
+                    href="https://www.cnet.com/home/energy-and-utilities/are-solar-panels-exempt-from-property-taxes-and-sales-taxes-in-your-state/"
+                    >HERE</a
+                  >). Because we own and operate the equipment so that you can
+                  get cheaper electricity, you would not be eligible for a
+                  Federal tax credit.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="cc-query-item">
+            <div
+              class="flex flex-col gap-2 py-4"
+              x-data="{ expanded: false }"
+              @faq="expanded = false"
+            >
+              <div
+                class="flex flex-row items-center justify-between cursor-pointer"
+                @click="expanded = !expanded"
+              >
+                <div class="flex items-center gap-1">
+                  <svg
+                    class="2xl:fill-primary-dark 2xl:size-4 cc-svg"
+                    viewBox="0 0 24 28"
+                  >
+                    <path
+                      d="M14 21.5v-3c0-0.281-0.219-0.5-0.5-0.5h-3c-0.281 0-0.5 0.219-0.5 0.5v3c0 0.281 0.219 0.5 0.5 0.5h3c0.281 0 0.5-0.219 0.5-0.5zM18 11c0-2.859-3-5-5.688-5-2.547 0-4.453 1.094-5.797 3.328-0.141 0.219-0.078 0.5 0.125 0.656l2.063 1.563c0.078 0.063 0.187 0.094 0.297 0.094 0.141 0 0.297-0.063 0.391-0.187 0.734-0.938 1.047-1.219 1.344-1.437 0.266-0.187 0.781-0.375 1.344-0.375 1 0 1.922 0.641 1.922 1.328 0 0.812-0.422 1.219-1.375 1.656-1.109 0.5-2.625 1.797-2.625 3.313v0.562c0 0.281 0.219 0.5 0.5 0.5h3c0.281 0 0.5-0.219 0.5-0.5v0c0-0.359 0.453-1.125 1.188-1.547 1.188-0.672 2.812-1.578 2.812-3.953zM24 14c0 6.625-5.375 12-12 12s-12-5.375-12-12 5.375-12 12-12 12 5.375 12 12z"
+                    ></path>
+                  </svg>
+
+                  <h1 class="font-semibold text-zinc-950/90">
+                    What if I sell my house?
+                  </h1>
+                </div>
+
+                <svg
+                  class="cc-svg"
+                  viewBox="0 0 16 28"
+                >
+                  <path
+                    d="M16 11c0 0.266-0.109 0.516-0.297 0.703l-7 7c-0.187 0.187-0.438 0.297-0.703 0.297s-0.516-0.109-0.703-0.297l-7-7c-0.187-0.187-0.297-0.438-0.297-0.703 0-0.547 0.453-1 1-1h14c0.547 0 1 0.453 1 1z"
+                  ></path>
+                </svg>
+              </div>
+
+              <div
+                x-show="expanded"
+                x-collapse=""
+                style="display: none; height: 0px; overflow: hidden"
+                hidden=""
+              >
+                <p class="text-zinc-500">
+                  Unlike a loan or a lease, you don’t owe anything, but you get
+                  the resale benefit of having solar and therefore cheaper
+                  electricity for the new owner.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="cc-query-item">
+            <div
+              class="flex flex-col gap-2 py-4"
+              x-data="{ expanded: false }"
+              @faq="expanded = false"
+            >
+              <div
+                class="flex flex-row items-center justify-between cursor-pointer"
+                @click="expanded = !expanded"
+              >
+                <div class="flex items-center gap-1">
+                  <svg
+                    class="2xl:fill-primary-dark 2xl:size-4 cc-svg"
+                    viewBox="0 0 24 28"
+                  >
+                    <path
+                      d="M14 21.5v-3c0-0.281-0.219-0.5-0.5-0.5h-3c-0.281 0-0.5 0.219-0.5 0.5v3c0 0.281 0.219 0.5 0.5 0.5h3c0.281 0 0.5-0.219 0.5-0.5zM18 11c0-2.859-3-5-5.688-5-2.547 0-4.453 1.094-5.797 3.328-0.141 0.219-0.078 0.5 0.125 0.656l2.063 1.563c0.078 0.063 0.187 0.094 0.297 0.094 0.141 0 0.297-0.063 0.391-0.187 0.734-0.938 1.047-1.219 1.344-1.437 0.266-0.187 0.781-0.375 1.344-0.375 1 0 1.922 0.641 1.922 1.328 0 0.812-0.422 1.219-1.375 1.656-1.109 0.5-2.625 1.797-2.625 3.313v0.562c0 0.281 0.219 0.5 0.5 0.5h3c0.281 0 0.5-0.219 0.5-0.5v0c0-0.359 0.453-1.125 1.188-1.547 1.188-0.672 2.812-1.578 2.812-3.953zM24 14c0 6.625-5.375 12-12 12s-12-5.375-12-12 5.375-12 12-12 12 5.375 12 12z"
+                    ></path>
+                  </svg>
+
+                  <h1 class="font-semibold text-zinc-950/90">
+                    What if I need to replace my roof?
+                  </h1>
+                </div>
+
+                <svg
+                  class="cc-svg"
+                  viewBox="0 0 16 28"
+                >
+                  <path
+                    d="M16 11c0 0.266-0.109 0.516-0.297 0.703l-7 7c-0.187 0.187-0.438 0.297-0.703 0.297s-0.516-0.109-0.703-0.297l-7-7c-0.187-0.187-0.297-0.438-0.297-0.703 0-0.547 0.453-1 1-1h14c0.547 0 1 0.453 1 1z"
+                  ></path>
+                </svg>
+              </div>
+
+              <div
+                x-show="expanded"
+                x-collapse=""
+                style="display: none; height: 0px; overflow: hidden"
+                hidden=""
+              >
+                <p class="text-zinc-500">
+                  We will remove, refresh and replace all of the equipment free
+                  of charge for any system that has been in service for a
+                  minimum of 10 years.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="cc-query-item">
+            <div
+              class="flex flex-col gap-2 py-4"
+              x-data="{ expanded: false }"
+              @faq="expanded = false"
+            >
+              <div
+                class="flex flex-row items-center justify-between cursor-pointer"
+                @click="expanded = !expanded"
+              >
+                <div class="flex items-center gap-1">
+                  <svg
+                    class="2xl:fill-primary-dark 2xl:size-4 cc-svg"
+                    viewBox="0 0 24 28"
+                  >
+                    <path
+                      d="M14 21.5v-3c0-0.281-0.219-0.5-0.5-0.5h-3c-0.281 0-0.5 0.219-0.5 0.5v3c0 0.281 0.219 0.5 0.5 0.5h3c0.281 0 0.5-0.219 0.5-0.5zM18 11c0-2.859-3-5-5.688-5-2.547 0-4.453 1.094-5.797 3.328-0.141 0.219-0.078 0.5 0.125 0.656l2.063 1.563c0.078 0.063 0.187 0.094 0.297 0.094 0.141 0 0.297-0.063 0.391-0.187 0.734-0.938 1.047-1.219 1.344-1.437 0.266-0.187 0.781-0.375 1.344-0.375 1 0 1.922 0.641 1.922 1.328 0 0.812-0.422 1.219-1.375 1.656-1.109 0.5-2.625 1.797-2.625 3.313v0.562c0 0.281 0.219 0.5 0.5 0.5h3c0.281 0 0.5-0.219 0.5-0.5v0c0-0.359 0.453-1.125 1.188-1.547 1.188-0.672 2.812-1.578 2.812-3.953zM24 14c0 6.625-5.375 12-12 12s-12-5.375-12-12 5.375-12 12-12 12 5.375 12 12z"
+                    ></path>
+                  </svg>
+
+                  <h1 class="font-semibold text-zinc-950/90">
+                    Whats included in the price?
+                  </h1>
+                </div>
+
+                <svg
+                  class="cc-svg"
+                  viewBox="0 0 16 28"
+                >
+                  <path
+                    d="M16 11c0 0.266-0.109 0.516-0.297 0.703l-7 7c-0.187 0.187-0.438 0.297-0.703 0.297s-0.516-0.109-0.703-0.297l-7-7c-0.187-0.187-0.297-0.438-0.297-0.703 0-0.547 0.453-1 1-1h14c0.547 0 1 0.453 1 1z"
+                  ></path>
+                </svg>
+              </div>
+
+              <div
+                x-show="expanded"
+                x-collapse=""
+                style="display: none; height: 0px; overflow: hidden"
+                hidden=""
+              >
+                <p class="text-zinc-500">
+                  25 years of warranties, insurance, service, maintenance,
+                  24/7/365 remote monitoring and a mobile app to track every
+                  aspect of the system.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="cc-query-item">
+            <div
+              class="flex flex-col gap-2 py-4"
+              x-data="{ expanded: false }"
+              @faq="expanded = false"
+            >
+              <div
+                class="flex flex-row items-center justify-between cursor-pointer"
+                @click="expanded = !expanded"
+              >
+                <div class="flex items-center gap-1">
+                  <svg
+                    class="2xl:fill-primary-dark 2xl:size-4 cc-svg"
+                    viewBox="0 0 24 28"
+                  >
+                    <path
+                      d="M14 21.5v-3c0-0.281-0.219-0.5-0.5-0.5h-3c-0.281 0-0.5 0.219-0.5 0.5v3c0 0.281 0.219 0.5 0.5 0.5h3c0.281 0 0.5-0.219 0.5-0.5zM18 11c0-2.859-3-5-5.688-5-2.547 0-4.453 1.094-5.797 3.328-0.141 0.219-0.078 0.5 0.125 0.656l2.063 1.563c0.078 0.063 0.187 0.094 0.297 0.094 0.141 0 0.297-0.063 0.391-0.187 0.734-0.938 1.047-1.219 1.344-1.437 0.266-0.187 0.781-0.375 1.344-0.375 1 0 1.922 0.641 1.922 1.328 0 0.812-0.422 1.219-1.375 1.656-1.109 0.5-2.625 1.797-2.625 3.313v0.562c0 0.281 0.219 0.5 0.5 0.5h3c0.281 0 0.5-0.219 0.5-0.5v0c0-0.359 0.453-1.125 1.188-1.547 1.188-0.672 2.812-1.578 2.812-3.953zM24 14c0 6.625-5.375 12-12 12s-12-5.375-12-12 5.375-12 12-12 12 5.375 12 12z"
+                    ></path>
+                  </svg>
+
+                  <h1 class="font-semibold text-zinc-950/90">
+                    What if I skip a payment?
+                  </h1>
+                </div>
+
+                <svg
+                  class="cc-svg"
+                  viewBox="0 0 16 28"
+                >
+                  <path
+                    d="M16 11c0 0.266-0.109 0.516-0.297 0.703l-7 7c-0.187 0.187-0.438 0.297-0.703 0.297s-0.516-0.109-0.703-0.297l-7-7c-0.187-0.187-0.297-0.438-0.297-0.703 0-0.547 0.453-1 1-1h14c0.547 0 1 0.453 1 1z"
+                  ></path>
+                </svg>
+              </div>
+
+              <div
+                x-show="expanded"
+                x-collapse=""
+                style="display: none; height: 0px; overflow: hidden"
+                hidden=""
+              >
+                <p class="text-zinc-500">
+                  Think of it as “coin operated access to the sun”. The machine
+                  won’t work if you don’t put the coin in. We know life happens
+                  and this might occur, but you will still get elextricity from
+                  your power company and pay the higher prices.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div
+            class="cc-query-item"
+            data-lastpost="1"
+          >
+            <div
+              class="flex flex-col gap-2 py-4"
+              x-data="{ expanded: false }"
+              @faq="expanded = false"
+            >
+              <div
+                class="flex flex-row items-center justify-between cursor-pointer"
+                @click="expanded = !expanded"
+              >
+                <div class="flex items-center gap-1">
+                  <svg
+                    class="2xl:fill-primary-dark 2xl:size-4 cc-svg"
+                    viewBox="0 0 24 28"
+                  >
+                    <path
+                      d="M14 21.5v-3c0-0.281-0.219-0.5-0.5-0.5h-3c-0.281 0-0.5 0.219-0.5 0.5v3c0 0.281 0.219 0.5 0.5 0.5h3c0.281 0 0.5-0.219 0.5-0.5zM18 11c0-2.859-3-5-5.688-5-2.547 0-4.453 1.094-5.797 3.328-0.141 0.219-0.078 0.5 0.125 0.656l2.063 1.563c0.078 0.063 0.187 0.094 0.297 0.094 0.141 0 0.297-0.063 0.391-0.187 0.734-0.938 1.047-1.219 1.344-1.437 0.266-0.187 0.781-0.375 1.344-0.375 1 0 1.922 0.641 1.922 1.328 0 0.812-0.422 1.219-1.375 1.656-1.109 0.5-2.625 1.797-2.625 3.313v0.562c0 0.281 0.219 0.5 0.5 0.5h3c0.281 0 0.5-0.219 0.5-0.5v0c0-0.359 0.453-1.125 1.188-1.547 1.188-0.672 2.812-1.578 2.812-3.953zM24 14c0 6.625-5.375 12-12 12s-12-5.375-12-12 5.375-12 12-12 12 5.375 12 12z"
+                    ></path>
+                  </svg>
+
+                  <h1 class="font-semibold text-zinc-950/90">
+                    What’s different from a PPA?
+                  </h1>
+                </div>
+
+                <svg
+                  class="cc-svg"
+                  viewBox="0 0 16 28"
+                >
+                  <path
+                    d="M16 11c0 0.266-0.109 0.516-0.297 0.703l-7 7c-0.187 0.187-0.438 0.297-0.703 0.297s-0.516-0.109-0.703-0.297l-7-7c-0.187-0.187-0.297-0.438-0.297-0.703 0-0.547 0.453-1 1-1h14c0.547 0 1 0.453 1 1z"
+                  ></path>
+                </svg>
+              </div>
+
+              <div
+                x-show="expanded"
+                x-collapse=""
+                style="display: none; height: 0px; overflow: hidden"
+                hidden=""
+              >
+                <p class="text-zinc-500">
+                  With a PPA, you only pay for what you use, with any excess
+                  electricity generaged belongs to the PPA company who then
+                  sells it to the grid. With us, you get to own all the
+                  electricity generated.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

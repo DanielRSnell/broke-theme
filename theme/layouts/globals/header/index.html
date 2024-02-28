@@ -1,0 +1,118 @@
+<header id="lc-header">
+  <div class="fixed inset-x-0 z-50 top-4">
+    <div class="max-w-2xl px-8 mx-auto">
+      <div class="w-full mx-auto">
+        <div
+          class="relative flex flex-col w-full p-3 mx-auto uppercase bg-white rounded-xl ring-1 ring-zinc-200 backdrop-blur-xl backdrop-filter md:flex-row md:items-center md:justify-between md:rounded-full"
+          x-data="{ open: false }"
+        >
+          <div
+            class="flex flex-row items-center justify-between md:justify-start"
+          >
+            <a
+              class="inline-flex items-center gap-4 ml-2 text-xs font-medium tracking-tighter text-black hover:text-black/50 current"
+              href="/"
+              rel="noopener"
+              target="_self"
+            >
+              <img
+                class="w-16 max-w-24 aspect-auto cc-img"
+                src="https://beacon-v2.local/wp-content/uploads/2024/01/Logo-Black-1-3.png"
+                srcset="
+                  https://beacon-v2.local/wp-content/uploads/2024/01/Logo-Black-1-3.png          1832w,
+                  https://beacon-v2.local/wp-content/uploads/2024/01/Logo-Black-1-3-300x88.png    300w,
+                  https://beacon-v2.local/wp-content/uploads/2024/01/Logo-Black-1-3-1024x302.png 1024w,
+                  https://beacon-v2.local/wp-content/uploads/2024/01/Logo-Black-1-3-768x226.png   768w,
+                  https://beacon-v2.local/wp-content/uploads/2024/01/Logo-Black-1-3-1536x453.png 1536w
+                "
+                sizes="(max-width: 1832px) 100vw, 1832px"
+                width="1832"
+                height="540"
+                alt=""
+              />
+            </a>
+
+            <button
+              class="inline-flex items-center justify-center p-2 text-zinc-400 hover:text-cyan-300 focus:text-black focus:outline-none md:hidden"
+              @click="open = !open"
+            >
+              <svg
+                class="w-6 h-6 cc-svg"
+                x-show="!open"
+                viewBox="0 0 18 14"
+                width="18"
+                height="14"
+                fill="none"
+              >
+                <script xmlns=""></script>
+                <path
+                  d="M1 1H17M1 7H17M1 13H17"
+                  stroke="black"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>
+              </svg>
+
+              <svg
+                class="w-6 h-6 cc-svg"
+                x-show="open"
+                viewBox="0 0 14 14"
+                width="14"
+                height="14"
+                fill="none"
+                style="display: none"
+              >
+                <script xmlns=""></script>
+                <path
+                  d="M1 13L13 1M1 1L13 13"
+                  stroke="black"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>
+              </svg>
+            </button>
+          </div>
+
+          <nav
+            class="flex-col justify-center flex-grow hidden py-12 md:flex md:flex-row md:items-end md:py-0"
+            :class="{'flex': open, 'hidden': !open}"
+          >
+            <ul
+              class="items-center justify-center gap-3 space-y-2 text-xs text-center list-none text-zinc-500 md:ml-auto md:inline-flex md:space-y-0 md:text-left"
+            >
+              <li>
+                <a
+                  class="shrink-0 hover:text-black"
+                  href="https://beacon-v2.local/about/"
+                  rel="noopener"
+                  target="_self"
+                  >About</a
+                >
+              </li>
+
+              <li>
+                <a
+                  class="pr-2 shrink-0 hover:text-black"
+                  href="https://beacon-v2.local/blog/"
+                  rel="noopener"
+                  target="_self"
+                  >Blog</a
+                >
+              </li>
+
+              <li>
+                <a
+                  class="inline-flex items-center justify-center w-auto h-8 px-4 py-2 font-bold duration-200 border-2 border-black rounded-full cursor-pointer focus:ring-2 focus:ring-offset-2 hover:text-black ring-2 focus:ring-black ring-zinc-100 hover:text-zinc-100 bg-zinc-100 border-zinc-200 hover:bg-primary-dark hover:border-primary-dark current"
+                  href="/#estimate"
+                  rel="noopener"
+                  target="_self"
+                  >Get Estimate</a
+                >
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>

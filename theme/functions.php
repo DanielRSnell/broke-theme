@@ -37,7 +37,7 @@ class broketheme extends Timber\Site
         $context['menu'] = Timber::get_menu();
 
         // Require block functions files
-        foreach (glob(dirname(__FILE__) . "/blocks/*/functions.php") as $file) {
+        foreach (glob(dirname(__FILE__) . "/blocks/*/context.php") as $file) {
             require_once $file;
         }
 
@@ -177,72 +177,158 @@ class broketheme extends Timber\Site
 
 new broketheme();
 
-function acf_block_render_callback($block, $content)
+function my_admin_theme_style()
 {
-    $context = Timber::context();
-    $context['post'] = Timber::get_post();
-    $context['block'] = $block;
-    $context['fields'] = get_fields();
-    $template = $block['path'] . '/index.html';
+    wp_enqueue_style('my-admin-theme', get_template_directory_uri() . '/admin/_style.css');
+}
+add_action('admin_enqueue_scripts', 'my_admin_theme_style');
 
-    Timber::render($template, $context);
+use League\CommonMark\Extension\FrontMatter\Data\SymfonyYamlFrontMatterParser;
+use League\CommonMark\Extension\FrontMatter\FrontMatterParser;
+
+add_action('rest_api_init', function () {
+    register_rest_route('broke/v1', '/fields', array(
+        'methods' => 'GET',
+        'callback' => 'parse_markdown_fields',
+        'args' => array(
+            'file_name' => array(
+                'required' => true,
+                'validate_callback' => function ($param, $request, $key) {
+                    return is_string($param);
+                },
+            ),
+        ),
+    ));
+});
+
+function parse_markdown_fields($request)
+{
+    $file_name = $request['file_name'];
+    $file_path = get_stylesheet_directory() . "/blocks/$file_name/fields.md";
+
+    if (file_exists($file_path)) {
+        $markdownContent = file_get_contents($file_path);
+
+        // Initialize the parser with Symfony YAML front matter parsing.
+        $frontMatterParser = new FrontMatterParser(new SymfonyYamlFrontMatterParser());
+
+        // Parse the content.
+        $document = $frontMatterParser->parse($markdownContent);
+        $frontMatter = $document->getFrontMatter(); // This will contain the parsed YAML front matter.
+        $markdown = $document->getContent(); // This will contain the Markdown content without the front matter.
+
+        return new WP_REST_Response([
+            'frontMatter' => $frontMatter,
+            'markdown' => $markdown,
+        ], 200);
+    } else {
+        return new WP_Error('file_not_found', 'The requested file could not be found.', array('status' => 404, 'file_name' => $file_path));
+    }
 }
 
-// Remove ACF block wrapper div
-function acf_should_wrap_innerblocks($wrap, $name)
+class ACF_Fields_From_Markdown
 {
-    // if ( $name == 'acf/test-block' ) {
-    //     return true;
-    // }
-    return false;
-}
+    public function __construct()
+    {
+        add_action('init', [$this, 'register_fields_from_markdown']);
+    }
 
-add_filter('acf/blocks/wrap_frontend_innerblocks', 'acf_should_wrap_innerblocks', 10, 2);
+    public function register_fields_from_markdown()
+    {
+        // Bail if ACF isn't active
+        if (!function_exists('acf_add_local_field_group')) {
+            return;
+        }
 
-// Define the post types to disable the block editor.
-$disabled_block_editor_post_types = ['page']; // Add 'post', 'custom_post_type', etc., as needed.
+        $directory = get_template_directory() . '/blocks/';
+        $this->scan_directory($directory);
+    }
 
-// Define the post types to completely disable the editor.
-$disabled_editor_post_types = ['page']; // Separate array for complete disabling.
+    private function scan_directory($directory)
+    {
+        $files = new RecursiveIteratorIterator(new RecursiveDirectoryIterator($directory));
+        foreach ($files as $file) {
+            if ($file->isDir()) {
+                continue;
+            }
 
-// Hook into the 'use_block_editor_for_post_type' filter to disable the block editor for specific post types.
-add_filter('use_block_editor_for_post_type', 'disable_block_editor_for_specific_post_types', 10, 2);
+            if ($file->getFilename() === 'filters.php') {
+                require_once $file->getPathname();
+            }
 
-function disable_block_editor_for_specific_post_types($use_block_editor, $post_type)
-{
-    global $disabled_block_editor_post_types;
+            if ($file->getFilename() === 'fields.md') {
+                $this->parse_and_register_fields($file->getPathname());
+            }
+        }
+    }
 
-    return in_array($post_type, $disabled_block_editor_post_types) ? false : $use_block_editor;
-}
+    private function parse_and_register_fields($file_path)
+    {
+        $content = file_get_contents($file_path);
+        $frontMatterParser = new FrontMatterParser(new SymfonyYamlFrontMatterParser());
+        $document = $frontMatterParser->parse($content);
+        $frontMatter = $document->getFrontMatter();
 
-// Remove unwanted meta boxes for specified post types in the admin.
-add_action('admin_init', 'remove_unwanted_meta_boxes');
-
-function remove_unwanted_meta_boxes()
-{
-    global $disabled_block_editor_post_types, $pagenow;
-
-    // Check if we're on the post edit screen and the current post type is in our list.
-    if ('post.php' === $pagenow || 'post-new.php' === $pagenow) {
-        $current_post_type = get_post_type(get_the_ID());
-        if (in_array($current_post_type, $disabled_block_editor_post_types)) {
-            remove_meta_box('postcustom', null, 'normal'); // Custom Fields meta box
-            remove_meta_box('slugdiv', null, 'normal'); // Slug meta box
-            remove_meta_box('commentstatusdiv', null, 'normal'); // Discussion meta box
-            remove_meta_box('commentsdiv', null, 'normal'); // Comments meta box
-            remove_meta_box('revisionsdiv', null, 'normal'); // Revisions meta box
+        if (isset($frontMatter['field_groups']) && is_array($frontMatter['field_groups'])) {
+            foreach ($frontMatter['field_groups'] as $group) {
+                acf_add_local_field_group($group);
+            }
         }
     }
 }
 
-// Hook into the 'init' action to remove editor support from specified post types.
-add_action('init', 'remove_editor_from_specific_post_types');
+new ACF_Fields_From_Markdown();
 
-function remove_editor_from_specific_post_types()
+function prism_enqueue_gutenberg_assets()
 {
-    global $disabled_editor_post_types;
+    // Enqueue Prism.js CSS
+    wp_enqueue_style(
+        'prismjs-okaidia-theme',
+        'https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism-okaidia.min.css',
+        array(), // No dependencies
+        '1.24.1' // Version number
+    );
 
-    foreach ($disabled_editor_post_types as $post_type) {
-        remove_post_type_support($post_type, 'editor');
+    // Enqueue Prism.js core library
+    wp_enqueue_script(
+        'prismjs-core',
+        'https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.min.js',
+        array(), // No dependencies
+        '1.24.1', // Version number
+        true// Load in footer
+    );
+
+    // Optionally, include additional languages (e.g., JSON)
+    wp_enqueue_script(
+        'prismjs-json',
+        'https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-json.min.js',
+        array('prismjs-core'), // Dependency on the core Prism.js script
+        '1.24.1', // Version number
+        true// Load in footer
+    );
+}
+
+add_action('enqueue_block_editor_assets', 'prism_enqueue_gutenberg_assets');
+
+add_action('rest_api_init', function () {
+    register_rest_route('broke/v1', '/field_types', array(
+        'methods' => 'GET',
+        'callback' => 'get_acf_field_types',
+        'permission_callback' => '__return_true', // Allows public access to this endpoint.
+    ));
+});
+
+function get_acf_field_types()
+{
+    if (function_exists('acf_get_field_types')) {
+        // Fetching all registered ACF field types.
+        $field_types = acf_get_field_types();
+        $field_types_keys = array_keys($field_types);
+
+        // Returning the list of field type keys.
+        return new WP_REST_Response($field_types, 200);
     }
+
+    // Return an error if ACF is not active/available.
+    return new WP_Error('acf_not_found', 'ACF not available', array('status' => 404));
 }

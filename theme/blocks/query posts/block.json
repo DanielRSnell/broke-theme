@@ -1,0 +1,23 @@
+{
+  "apiVersion": 2,
+  "name": "acf/query-posts",
+  "title": "query posts",
+  "description": "",
+  "category": "navigations",
+  "acf": {
+    "mode": "preview",
+    "renderCallback": "acf_block_render_callback"
+  },
+  "supports": {
+    "align": false,
+    "jsx": false
+  },
+  "example": {
+    "attributes": {
+      "mode": "preview",
+      "data": {
+        "is_preview": true
+      }
+    }
+  }
+}

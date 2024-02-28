@@ -1,8 +1,9 @@
-<?php 
+<?php
 
 $base_dir = get_stylesheet_directory() . '/timber/';
 
 require $base_dir . 'locations.php';
+require $base_dir . 'blocks.php';
 
 // List of directories to include files from.
 $directories = ['functions', 'maps', 'shortcodes', 'context', 'filters'];

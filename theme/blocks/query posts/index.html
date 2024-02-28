@@ -1,0 +1,10 @@
+<!-- prettier-ignore -->
+{% if is_preview %}
+{# This is where you manage the preview within Gutenberg, sometimes things may need to be done here in order to generate a preview, in our case we use it for our block debugger as well #}
+
+    {% if fields.debugger %}
+        {# Whenever the debugger is active, it will show inside gutenberg for this block #}
+        {{ include('@helper/debug-block.html') }}
+    {% endif %}
+    
+{% endif %}
